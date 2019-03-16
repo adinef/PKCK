@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+<!DOCTYPE FilmDatabase SYSTEM "films.dtd"> 
+<FilmDatabase>
+	<Head>
+		<Author>Adrian Fijałkowski, 210171</Author>
+		<Name>Baza filmów</Name>
+	</Head>
+	
+	<Films>
+		<Film id="1">
+			<Name>Lśnienie</Name>
+			<Description>
+				Jack podejmuje pracę stróża odciętego od świata hotelu Overlook.
+				Wkrótce idylla zamienia się w koszmar. 
+			</Description>
+			<ReleaseYear>
+				1980
+			</ReleaseYear>
+			<Lead>
+				<Name>Jack</Name>
+				<LastName>Nicholson</LastName>
+				<BirthDate>22-04-1937</BirthDate>
+			</Lead>
+			<Director id="1">
+				<Name>Stanley</Name>
+				<LastName>Kubrick</LastName>
+				<BirthDate>26-07-1928</BirthDate>
+			</Director>
+		</Film>
+		<Film id="2">
+			<Name>Wszystko za życie</Name>
+			<Description>
+				Christopher kończy studia, ale zamiast poświęcić się karierze zawodowej,
+				wyrusza autostopem w kierunku Alaski. 
+			</Description>
+			<ReleaseYear>
+				2007
+			</ReleaseYear>
+			<Lead>
+				<Name>Emile</Name>
+				<LastName>Hirsch</LastName>
+				<BirthDate>13-03-1985</BirthDate>
+			</Lead>
+			<Director id="2">
+				<Name>Sean</Name>
+				<LastName>Penn</LastName>
+				<BirthDate>17-08-1960</BirthDate>
+			</Director>
+		</Film>
+		<Film id="2">
+			<Name>Czas apokalipsy</Name>
+			<Description>
+				Adaptacja opowiadania Josepha Conrada "Jądro ciemności".
+				Przeniesiona w realia wojny wietnamskiej historia kapitana Willarda,
+				który otrzymuje misję odnalezienia i zlikwidowania pułkownika Kurtza.
+			</Description>
+			<ReleaseYear>
+				1979
+			</ReleaseYear>
+			<Lead>
+				<Name>Martin</Name>
+				<LastName>Sheen</LastName>
+				<BirthDate>03-08-1940</BirthDate> id="3">
+			</Lead>
+			<Director>
+				<Name>Francis Ford</Name>
+				<LastName>Copolla</LastName>
+				<BirthDate>07-04-1939</BirthDate>
+			</Director>
+		</Film>
+	</Films>
+</FilmDatabase>

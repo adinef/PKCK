@@ -1,0 +1,13 @@
+<!ELEMENT FilmDatabase (Films, Head)> 
+<!ELEMENT Films (Film*)> 
+<!ELEMENT Lead (Name, LastName, BirthDate)> 
+<!ELEMENT Director (Name, LastName, BirthDate)> 
+<!ELEMENT Film (Name, Description, ReleaseYear, Lead, MainDirector)> 
+<!ELEMENT Head (Author, Name)>
+
+<!ATTLIST Actor id ID "0" #REQUIRED>
+<!ATTLIST Director id ID "0" #REQUIRED>
+<!ATTLIST Film id ID "0" #REQUIRED>
+//TODO:
+<ATTLIST Actor refid IDREF "0" #REQUIRED>
+<ATTLIST Director refid IDREF "0">

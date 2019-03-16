@@ -1,0 +1,157 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    line-height: 1.2;
+}
+
+FilmDatabase {
+	background-image: url("bck.jpg");
+	background-size: cover;
+}
+
+/* HEAD */
+
+Head {
+	background-color: rgba(200, 200, 200, 0.9);
+	position: fixed;
+	display: block;
+	width: 100%;
+	height: 70px;
+	border: 1px solid gray;
+}
+
+Head > Author {
+	display: block;
+	position: relative;
+	font-style: italic;
+	font-size: 0.9rem;
+}
+
+Head > Author:hover {
+	font-size: 1.5rem;
+}
+
+Head > Name {
+	position: relative;
+	display: block;
+	margin: 0 auto;
+	font-style: bold;
+	width: 270px;
+	font-size: 2rem;
+}
+
+/* ACTORS RELATED */
+Lead {
+	display: block;
+	width: 200px;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+Lead::before {
+	text-decoration: underline;
+	font-style: oblique;
+	font-weight: bolder;
+	content: "Lead actor: ";
+}
+
+Lead > Name, Lead > LastName, Lead > BirthDate {
+	display: block;
+}
+
+Lead > Name::before {
+	font-style: italic;
+	content: "Name: ";
+}
+
+Lead > LastName::before {
+	font-style: italic;
+	content: "Last name: ";
+}
+
+Lead > BirthDate::before {
+	font-style: italic;
+	content: "Birthday: ";
+}
+
+
+/* DIRECTORS RELATED */
+Director {
+	display: block;
+	width: 200px;
+	margin-bottom: 10px;
+}
+
+Director::before {
+	text-decoration: underline;
+	font-style: oblique;
+	font-weight: bold;
+	content: "Director: ";
+}
+
+Director > Name::before {
+	font-style: italic;
+	content: "Name: ";
+}
+
+Director > LastName::before {
+	font-style: italic;
+	content: "Last name: ";
+}
+
+Director > BirthDate::before {
+	font-style: italic;
+	content: "Birthday: ";
+}
+
+Director > Name, Director > LastName, Director > BirthDate {
+	display: block;
+}
+
+/* FILMS RELATED */
+Films {
+	display: block;
+	width: 960px;
+	margin: 0 auto;
+	margin-top: 200px;
+}
+
+Film {
+	background-color: rgba(255, 255, 255, 0.7);
+	display: block;
+	padding: 25px;
+	margin-bottom: 100px;
+}
+
+Film:hover {
+	background-color: rgba(255, 255, 255, 0.9);
+}
+
+Film > Name {
+	margin: 0 auto;
+	width: 250px;
+	display: block;
+	font-weight: bolder;
+	font-size: 25px;
+	margin-bottom: 20px;
+}
+
+Film > Description {
+	display: block;
+	margin-bottom: 20px;
+}
+
+Film > Description::before {
+	text-decoration: underline;
+	font-style: italic;
+	display: block;
+	content: "Description: ";
+}
+
+Film > ReleaseYear::before {
+	text-decoration: underline;
+	display: block;
+	font-style: italic;
+	content: "Release year: ";
+}
