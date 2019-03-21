@@ -6,10 +6,17 @@
 		<Author>Adrian Fijałkowski, 210171</Author>
 		<Name>Baza filmów</Name>
 	</Head>
-	
+	<Categories>
+		<Category catId="CAT01">Horror</Category>
+		<Category catId="CAT02">Dramat</Category>
+		<Category catId="CAT03">Wojenny</Category>
+	</Categories>
 	<Films>
-		<Film id="1">
+		<Film filmId="F01">
 			<Name>Lśnienie</Name>
+			<Categories>
+				<Category catRefId="CAT01">Horror</Category>
+			</Categories>
 			<Description>
 				Jack podejmuje pracę stróża odciętego od świata hotelu Overlook.
 				Wkrótce idylla zamienia się w koszmar. 
@@ -17,19 +24,22 @@
 			<ReleaseYear>
 				1980
 			</ReleaseYear>
-			<Lead>
+			<Lead leadId="L01">
 				<Name>Jack</Name>
 				<LastName>Nicholson</LastName>
 				<BirthDate>22-04-1937</BirthDate>
 			</Lead>
-			<Director id="1">
+			<Director directorId="D01">
 				<Name>Stanley</Name>
 				<LastName>Kubrick</LastName>
 				<BirthDate>26-07-1928</BirthDate>
 			</Director>
 		</Film>
-		<Film id="2">
+		<Film filmId="F02">
 			<Name>Wszystko za życie</Name>
+			<Categories>
+				<Category catRefId="CAT02">Dramat</Category>
+			</Categories>
 			<Description>
 				Christopher kończy studia, ale zamiast poświęcić się karierze zawodowej,
 				wyrusza autostopem w kierunku Alaski. 
@@ -37,19 +47,23 @@
 			<ReleaseYear>
 				2007
 			</ReleaseYear>
-			<Lead>
+			<Lead leadId="L02">
 				<Name>Emile</Name>
 				<LastName>Hirsch</LastName>
 				<BirthDate>13-03-1985</BirthDate>
 			</Lead>
-			<Director id="2">
+			<Director directorId="D02">
 				<Name>Sean</Name>
 				<LastName>Penn</LastName>
 				<BirthDate>17-08-1960</BirthDate>
 			</Director>
 		</Film>
-		<Film id="2">
+		<Film filmId="F03">
 			<Name>Czas apokalipsy</Name>
+			<Categories>
+				<Category catRefId="CAT02">Dramat</Category>
+				<Category catRefId="CAT03">Wojenny</Category>
+			</Categories>
 			<Description>
 				Adaptacja opowiadania Josepha Conrada "Jądro ciemności".
 				Przeniesiona w realia wojny wietnamskiej historia kapitana Willarda,
@@ -58,12 +72,12 @@
 			<ReleaseYear>
 				1979
 			</ReleaseYear>
-			<Lead>
+			<Lead leadId="L03">
 				<Name>Martin</Name>
 				<LastName>Sheen</LastName>
-				<BirthDate>03-08-1940</BirthDate> id="3">
+				<BirthDate>03-08-1940</BirthDate>
 			</Lead>
-			<Director>
+			<Director directorId="D03">
 				<Name>Francis Ford</Name>
 				<LastName>Copolla</LastName>
 				<BirthDate>07-04-1939</BirthDate>

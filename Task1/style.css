@@ -40,6 +40,48 @@ Head > Name {
 	width: 270px;
 	font-size: 2rem;
 }
+/* CATEGORY */
+
+FilmDatabase > Categories {
+	display: block;
+	position: fixed;
+	margin: 0 auto;
+	margin-top: 70px;
+	width: 100%;
+	background: white;
+}
+
+Category {
+	display: inline-block;
+	margin-right: 10px;
+}
+
+Category[catId="CAT01"]::before,  Category[catRefId="CAT01"]::before{
+	display: inline-block;
+	content: ' ';
+	background-color: red;
+	margin-right: 5px;
+	width: 12px;
+	height: 12px;
+}
+
+Category[catId="CAT02"]::before,  Category[catRefId="CAT02"]::before{
+	display: inline-block;
+	content: ' ';
+	background-color: green;
+	margin-right: 5px;
+	width: 12px;
+	height: 12px;
+}
+
+Category[catId="CAT03"]::before,  Category[catRefId="CAT03"]::before{
+	display: inline-block;
+	content: ' ';
+	background-color: blue;
+	margin-right: 5px;
+	width: 12px;
+	height: 12px;
+}
 
 /* ACTORS RELATED */
 Lead {

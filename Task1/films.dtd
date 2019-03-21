@@ -1,13 +1,22 @@
-<!ELEMENT FilmDatabase (Films, Head)> 
+
+<!ELEMENT FilmDatabase (Head, Categories, Films)> 
+<!ELEMENT Head (Author, Name)>
+<!ELEMENT Author (#PCDATA)>
+<!ELEMENT Name (#PCDATA)>
+<!ELEMENT LastName (#PCDATA)>
+<!ELEMENT Categories (Category*)>
+<!ELEMENT Category (#PCDATA)>
+<!ATTLIST Category catId ID #IMPLIED>
+<!ATTLIST Category catRefId IDREF #IMPLIED>
 <!ELEMENT Films (Film*)> 
 <!ELEMENT Lead (Name, LastName, BirthDate)> 
-<!ELEMENT Director (Name, LastName, BirthDate)> 
-<!ELEMENT Film (Name, Description, ReleaseYear, Lead, MainDirector)> 
-<!ELEMENT Head (Author, Name)>
-
-<!ATTLIST Actor id ID "0" #REQUIRED>
-<!ATTLIST Director id ID "0" #REQUIRED>
-<!ATTLIST Film id ID "0" #REQUIRED>
-//TODO:
-<ATTLIST Actor refid IDREF "0" #REQUIRED>
-<ATTLIST Director refid IDREF "0">
+<!ATTLIST Lead leadId ID #REQUIRED>
+<!ATTLIST Lead refid IDREF #IMPLIED>
+<!ELEMENT BirthDate (#PCDATA)>
+<!ELEMENT Director (Name, LastName, BirthDate)>
+<!ATTLIST Director directorId ID #REQUIRED>
+<!ATTLIST Director refid IDREF #IMPLIED>
+<!ELEMENT Film (Name, Categories, Description, ReleaseYear, Lead, Director)> 
+<!ELEMENT Description (#PCDATA)>
+<!ELEMENT ReleaseYear (#PCDATA)>
+<!ATTLIST Film filmId ID #REQUIRED>
