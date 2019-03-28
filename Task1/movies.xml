@@ -16,6 +16,7 @@
 		<Category catId="CAT06">Komedia</Category>
 		<Category catId="CAT07">Przygodowy</Category>
 		<Category catId="CAT08">Kryminalny</Category>
+		<Category catId="CAT09">Fantasy</Category>
 	</Categories>
 	<Films>
 		<Film filmId="F01">
@@ -364,117 +365,121 @@
 			</Director>
 		</Film>
 		<!-- VALID to this point -->
-		<Film filmId="F06">
-			<Name>Święci z Bostonu</Name>
-			<Categories>
-				<Category catRefId="CAT04">Akcja</Category>
-			</Categories>
-			<Description>
-				Dwaj bracia podejmują walkę z bostońskimi złoczyńcami. Są przekonani, że sam Bóg powierzył im taką misję.
-			</Description>
-			<ReleaseYear>
-				1999
-			</ReleaseYear>
-			<Lead leadId="L06">
-				<Name>Norman</Name>
-				<LastName>Reedus</LastName>
-				<BirthDate>06-01-1969</BirthDate>
-			</Lead>
-			<Director directorId="D06">
-				<Name>Troy</Name>
-				<LastName>Duffy</LastName>
-				<BirthDate>08-06-1971</BirthDate>
-			</Director>
-		</Film>
-		<Film filmId="F07">
-			<Name>Dzień świra</Name>
+		<Film filmId="F16">
+			<Name>Les Misérables: Nędznicy</Name>
 			<Categories>
 				<Category catRefId="CAT02">Dramat</Category>
-				<Category catRefId="CAT06">Komedia</Category>
 			</Categories>
 			<Description>
-				Adaś Miauczyński, 49-letni rozwiedziony polonista, żyje w kręgu swoich natręctw, nie potrafiąc wyrwać się z nudy i rutyny dnia codziennego.
+				Adaptacja musicalu na podstawie powieści Victora Hugo.
+				Były więzień, Jean Valjean, dzięki pomocy biskupa zdobywa pozycję i zaczyna pomagać biednym,
+				podczas gdy prześladuje go inspektor Javert.
 			</Description>
 			<ReleaseYear>
-				2002
+				2012
 			</ReleaseYear>
-			<Lead leadId="L07">
-				<Name>Marek</Name>
-				<LastName>Kondrat</LastName>
-				<BirthDate>18-10-1950</BirthDate>
+			<Lead leadId="L13">
+				<Name>Hugh</Name>
+				<LastName>Jackman</LastName>
+				<BirthDate>12-10-1968</BirthDate>
 			</Lead>
-			<Director directorId="D07">
-				<Name>Marek</Name>
-				<LastName>Koterski</LastName>
-				<BirthDate>03-06-1942</BirthDate>
+			<Director directorId="D15">
+				<Name>Tom</Name>
+				<LastName>Hooper</LastName>
+				<BirthDate>01-10-1972</BirthDate>
 			</Director>
 		</Film>
-		<Film filmId="F08">
-			<Name>Wyspa psów</Name>
+		<Film filmId="F17">
+			<Name>Przekręt</Name>
+			<Categories>
+				<Category catRefId="CAT06">Komedia</Category>
+				<Category catRefId="CAT08">Kryminał</Category>
+			</Categories>
+			<Description>
+				Historia złożona z kilku gangsterskich opowieści, które splatają się wokół kradzieży drogocennego diamentu.
+			</Description>
+			<ReleaseYear>
+				2000
+			</ReleaseYear>
+			<Lead leadId="L14">
+				<Name>Brad</Name>
+				<LastName>Pitt</LastName>
+				<BirthDate>18-12-1963</BirthDate>
+			</Lead>
+			<Director directorRefId="D14">
+				<Name>Guy</Name>
+				<LastName>Ritchie</LastName>
+				<BirthDate>10-10-1968</BirthDate>
+			</Director>
+		</Film>
+		<Film filmId="F18">
+			<Name>Fantastyczne zwierzęta i jak je znaleźć</Name>
 			<Categories>
 				<Category catRefId="CAT06">Komedia</Category>
 				<Category catRefId="CAT07">Przygodowy</Category>
+				<Category catRefId="CAT09">Fantasy</Category>
 			</Categories>
 			<Description>
-				Osadzona w Japonii historia chłopca podróżującego w celu odnalezienia swojego zaginionego psa. 
+				Nowy Jork jest terroryzowany przez tajemnicze bestie, które chcą dopaść członków organizacji Powtórzmy Salem.
+				Tymczasem do miasta przyjeżdża pisarz Newt Scamander. 
 			</Description>
 			<ReleaseYear>
-				2018
+				2016
 			</ReleaseYear>
-			<Lead leadId="L08">
-				<Name>Bryan</Name>
-				<LastName>Cranston</LastName>
-				<BirthDate>07-03-1956</BirthDate>
+			<Lead leadId="L15">
+				<Name>Eddie</Name>
+				<LastName>Redmayne</LastName>
+				<BirthDate>06-01-1982</BirthDate>
 			</Lead>
-			<Director directorId="D08">
-				<Name>Wes</Name>
-				<LastName>Adnerson</LastName>
-				<BirthDate>01-05-1969</BirthDate>
+			<Director directorId="D16">
+				<Name>David</Name>
+				<LastName>Yates</LastName>
+				<BirthDate>30-11-1962</BirthDate>
 			</Director>
 		</Film>
-		<Film filmId="F09">
-			<Name>Ostatni Mohikanin</Name>
+		<Film filmId="F19">
+			<Name>Komornik</Name>
 			<Categories>
 				<Category catRefId="CAT02">Daramat</Category>
 			</Categories>
 			<Description>
-				Wychowywany przez Indian Sokole Oko staje do walki z najeźdźcami i zakochuje się w córce angielskiego dowódcy. 
+				Lucjan Bohme bezwzględnie egzekwuje długi mieszkańców Wałbrzycha. 
 			</Description>
 			<ReleaseYear>
 				1992
 			</ReleaseYear>
-			<Lead leadId="L09">
-				<Name>Daniel</Name>
-				<LastName>CDay-Lewis</LastName>
-				<BirthDate>29-04-1957</BirthDate>
+			<Lead leadId="L16">
+				<Name>Andrzej</Name>
+				<LastName>Chyra</LastName>
+				<BirthDate>27-08-1964</BirthDate>
 			</Lead>
-			<Director directorId="D09">
-				<Name>Michael</Name>
-				<LastName>Mann</LastName>
-				<BirthDate>05-02-1943</BirthDate>
+			<Director directorId="D17">
+				<Name>Feliks</Name>
+				<LastName>Falk</LastName>
+				<BirthDate>25-02-1941</BirthDate>
 			</Director>
 		</Film>
-		<Film filmId="F10">
-			<Name>Lepiej być nie może</Name>
+		<Film filmId="F20">
+			<Name>Drive</Name>
 			<Categories>
 				<Category catRefId="CAT02">Daramat</Category>
-				<Category catRefId="CAT06">Komedia</Category>
+				<Category catRefId="CAT04">Akcja</Category>
 			</Categories>
 			<Description>
-				Ekscentryczny Melvin zakochuje się w kelnerce z problemami. 
+				Bezimienny kierowca postanawia pomóc mężowi swojej sąsiadki w anulowaniu długu u groźnych bandytów.
 			</Description>
 			<ReleaseYear>
-				1997
+				2011
 			</ReleaseYear>
-			<Lead leadRefId="L01">
-				<Name>Jack</Name>
-				<LastName>Nicholson</LastName>
-				<BirthDate>22-04-1937</BirthDate>
+			<Lead leadId="L17">
+				<Name>Ryan</Name>
+				<LastName>Gosling</LastName>
+				<BirthDate>12-11-1980</BirthDate>
 			</Lead>
-			<Director directorId="D10">
-				<Name>James L.</Name>
-				<LastName>Brooks</LastName>
-				<BirthDate>09-05-1940</BirthDate>
+			<Director directorId="D18">
+				<Name>Nicholas</Name>
+				<LastName>Winding Refn</LastName>
+				<BirthDate>29-09-1970</BirthDate>
 			</Director>
 		</Film>
 	</Films>
