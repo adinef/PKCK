@@ -14,7 +14,8 @@
 <!ELEMENT BirthDate (#PCDATA)>
 <!ELEMENT Director (Name, LastName, BirthDate)>
 <!ATTLIST Director directorId ID #IMPLIED directorRefId IDREF #IMPLIED>
-<!ELEMENT Film (Name, Categories, Description, ReleaseYear, Lead, Director)> 
+<!ELEMENT Film (Name, AvgScore, Categories, Description, ReleaseYear, Lead, Director)> 
+<!ELEMENT AvgScore (#PCDATA)>
 <!ELEMENT Description (#PCDATA)>
 <!ELEMENT ReleaseYear (#PCDATA)>
 <!ATTLIST Film filmId ID #REQUIRED>

@@ -13,12 +13,14 @@ FilmDatabase {
 /* HEAD */
 
 Head {
-	background-color: rgba(200, 200, 200, 0.9);
+	background-color: brown;
+	color: beige;
 	position: fixed;
 	display: block;
 	width: 100%;
 	height: 70px;
 	border: 1px solid gray;
+	z-index: 1;
 }
 Head > Author {
 	display: inline-block;
@@ -42,6 +44,7 @@ Head > Name {
 	width: 270px;
 	font-style: bold;
 	font-size: 2rem;
+	text-shadow: 0px 0px 25px black;
 }
 
 Head > Author::after {
@@ -57,6 +60,8 @@ FilmDatabase > Categories {
 	margin-top: 70px;
 	width: 100%;
 	background: white;
+	box-shadow: 3px 0px 2px black;
+	z-index: 1;
 }
 
 Category {
@@ -91,6 +96,22 @@ Category[catId="CAT04"]::before,  Category[catRefId="CAT04"]::before{
 
 Category[catId="CAT05"]::before,  Category[catRefId="CAT05"]::before{
 	background-color: yellow;
+}
+
+Category[catId="CAT06"]::before,  Category[catRefId="CAT06"]::before{
+	background-color: pink;
+}
+
+Category[catId="CAT07"]::before,  Category[catRefId="CAT07"]::before{
+	background-color: darksalmon;
+}
+
+Category[catId="CAT08"]::before,  Category[catRefId="CAT08"]::before{
+	background-color: khaki;
+}
+
+Category[catId="CAT09"]::before,  Category[catRefId="CAT09"]::before{
+	background-color: cyan;
 }
 
 /* ACTORS RELATED */
@@ -172,21 +193,33 @@ Films {
 Film {
 	background-color: rgba(255, 255, 255, 0.7);
 	display: block;
-	padding: 25px;
 	margin-bottom: 100px;
+	padding-bottom: 20px;
+	box-shadow: 0px 0px 15px black;
 }
 
 Film:hover {
 	background-color: rgba(255, 255, 255, 0.9);
 }
 
+Film > Categories {
+	display: block;
+}
+
+Film > Categories > Category {
+	display: list-item;
+	list-style-type: none;
+}
+
 Film > Name {
-	margin: 0 auto;
-	width: 250px;
+	text-align: center;
 	display: block;
 	font-weight: bolder;
 	font-size: 25px;
 	margin-bottom: 20px;
+	background: brown;
+	color: beige;
+padding: 10px;
 }
 
 Film > Description {
@@ -206,4 +239,37 @@ Film > ReleaseYear::before {
 	display: block;
 	font-style: italic;
 	content: "Release year: ";
+}
+
+Film > ReleaseYear {
+	display: block;
+}
+
+Film > AvgScore {
+	position: relative;
+	display: block;
+	float: right;
+	right: 20px;
+	top: -55px;
+	font-weight: bold;
+	font-size: 25px;
+	border: 1px dashed red;
+	background: crimson;
+	width: 40px;
+	height: 70px;
+	text-align: center;
+	color: white;
+	box-shadow: 0px 0px 10px white;
+	z-index: 0;
+}
+
+Film > AvgScore::before {
+	display: inline-block;
+	content: "Score";
+	font-size: 15px;
+}
+
+Film > Description, Film > ReleaseYear, Film > Categories, Film > Lead, Film > Director, Film > Categories, Film > AvgScore {
+	margin-left: 20px;
+	margin-bottom: 15px;
 }
