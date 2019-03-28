@@ -5,11 +5,17 @@
 	<Head>
 		<Author>Adrian Fijałkowski, 210171</Author>
 		<Name>Baza filmów</Name>
+		<EMail>210171@edu.p.lodz.pl</EMail>
 	</Head>
 	<Categories>
 		<Category catId="CAT01">Horror</Category>
 		<Category catId="CAT02">Dramat</Category>
 		<Category catId="CAT03">Wojenny</Category>
+		<Category catId="CAT04">Akcja</Category>
+		<Category catId="CAT05">Sci-Fi</Category>
+		<Category catId="CAT06">Komedia</Category>
+		<Category catId="CAT07">Przygodowy</Category>
+		<Category catId="CAT08">Kryminalny</Category>
 	</Categories>
 	<Films>
 		<Film filmId="F01">
@@ -81,6 +87,394 @@
 				<Name>Francis Ford</Name>
 				<LastName>Copolla</LastName>
 				<BirthDate>07-04-1939</BirthDate>
+			</Director>
+		</Film>
+		<Film filmId="F04">
+			<Name>Kapitan Marvel</Name>
+			<Categories>
+				<Category catRefId="CAT04">Akcja</Category>
+				<Category catRefId="CAT05">Sci-Fi</Category>
+			</Categories>
+			<Description>
+				Ziemska kobieta po kontakcie z obcą rasą Kree otrzymuje nadludzkie moce.
+			</Description>
+			<ReleaseYear>
+				2019
+			</ReleaseYear>
+			<Lead leadId="L04">
+				<Name>Brie</Name>
+				<LastName>Larson</LastName>
+				<BirthDate>01-10-1989</BirthDate>
+			</Lead>
+			<Director directorId="D04">
+				<Name>Anna</Name>
+				<LastName>Bond</LastName>
+				<BirthDate></BirthDate>
+			</Director>
+		</Film>
+		<Film filmId="F05">
+			<Name>Filadelfia</Name>
+			<Categories>
+				<Category catRefId="CAT02">Dramat</Category>
+			</Categories>
+			<Description>
+				Chorujący na AIDS prawnik zostaje zwolniony z pracy. Walcząc o godność, podaje do sądu byłych pracodawców.
+			</Description>
+			<ReleaseYear>
+				1993
+			</ReleaseYear>
+			<Lead leadId="L05">
+				<Name>Tom</Name>
+				<LastName>Hanks</LastName>
+				<BirthDate>09-07-1956</BirthDate>
+			</Lead>
+			<Director directorId="D05">
+				<Name>Johnathan</Name>
+				<LastName>Demme</LastName>
+				<BirthDate>22-02-1944</BirthDate>
+			</Director>
+		</Film>
+		<Film filmId="F06">
+			<Name>Święci z Bostonu</Name>
+			<Categories>
+				<Category catRefId="CAT04">Akcja</Category>
+			</Categories>
+			<Description>
+				Dwaj bracia podejmują walkę z bostońskimi złoczyńcami. Są przekonani, że sam Bóg powierzył im taką misję.
+			</Description>
+			<ReleaseYear>
+				1999
+			</ReleaseYear>
+			<Lead leadId="L06">
+				<Name>Norman</Name>
+				<LastName>Reedus</LastName>
+				<BirthDate>06-01-1969</BirthDate>
+			</Lead>
+			<Director directorId="D06">
+				<Name>Troy</Name>
+				<LastName>Duffy</LastName>
+				<BirthDate>08-06-1971</BirthDate>
+			</Director>
+		</Film>
+		<Film filmId="F07">
+			<Name>Dzień świra</Name>
+			<Categories>
+				<Category catRefId="CAT02">Dramat</Category>
+				<Category catRefId="CAT06">Komedia</Category>
+			</Categories>
+			<Description>
+				Adaś Miauczyński, 49-letni rozwiedziony polonista, żyje w kręgu swoich natręctw, nie potrafiąc wyrwać się z nudy i rutyny dnia codziennego.
+			</Description>
+			<ReleaseYear>
+				2002
+			</ReleaseYear>
+			<Lead leadId="L07">
+				<Name>Marek</Name>
+				<LastName>Kondrat</LastName>
+				<BirthDate>18-10-1950</BirthDate>
+			</Lead>
+			<Director directorId="D07">
+				<Name>Marek</Name>
+				<LastName>Koterski</LastName>
+				<BirthDate>03-06-1942</BirthDate>
+			</Director>
+		</Film>
+		<Film filmId="F08">
+			<Name>Wyspa psów</Name>
+			<Categories>
+				<Category catRefId="CAT06">Komedia</Category>
+				<Category catRefId="CAT07">Przygodowy</Category>
+			</Categories>
+			<Description>
+				Osadzona w Japonii historia chłopca podróżującego w celu odnalezienia swojego zaginionego psa. 
+			</Description>
+			<ReleaseYear>
+				2018
+			</ReleaseYear>
+			<Lead leadId="L08">
+				<Name>Bryan</Name>
+				<LastName>Cranston</LastName>
+				<BirthDate>07-03-1956</BirthDate>
+			</Lead>
+			<Director directorId="D08">
+				<Name>Wes</Name>
+				<LastName>Adnerson</LastName>
+				<BirthDate>01-05-1969</BirthDate>
+			</Director>
+		</Film>
+		<Film filmId="F09">
+			<Name>Ostatni Mohikanin</Name>
+			<Categories>
+				<Category catRefId="CAT02">Daramat</Category>
+			</Categories>
+			<Description>
+				Wychowywany przez Indian Sokole Oko staje do walki z najeźdźcami i zakochuje się w córce angielskiego dowódcy. 
+			</Description>
+			<ReleaseYear>
+				1992
+			</ReleaseYear>
+			<Lead leadId="L09">
+				<Name>Daniel</Name>
+				<LastName>CDay-Lewis</LastName>
+				<BirthDate>29-04-1957</BirthDate>
+			</Lead>
+			<Director directorId="D09">
+				<Name>Michael</Name>
+				<LastName>Mann</LastName>
+				<BirthDate>05-02-1943</BirthDate>
+			</Director>
+		</Film>
+		<Film filmId="F10">
+			<Name>Lepiej być nie może</Name>
+			<Categories>
+				<Category catRefId="CAT02">Daramat</Category>
+				<Category catRefId="CAT06">Komedia</Category>
+			</Categories>
+			<Description>
+				Ekscentryczny Melvin zakochuje się w kelnerce z problemami. 
+			</Description>
+			<ReleaseYear>
+				1997
+			</ReleaseYear>
+			<Lead leadRefId="L01">
+				<Name>Jack</Name>
+				<LastName>Nicholson</LastName>
+				<BirthDate>22-04-1937</BirthDate>
+			</Lead>
+			<Director directorId="D10">
+				<Name>James L.</Name>
+				<LastName>Brooks</LastName>
+				<BirthDate>09-05-1940</BirthDate>
+			</Director>
+		</Film>
+		<Film filmId="F11">
+			<Name>Lot nad kukułczym gniazdem</Name>
+			<Categories>
+				<Category catRefId="CAT01">Horror</Category>
+			</Categories>
+			<Description>
+				Historia złodzieja, szulera i chuligana, który, by uniknąć więzienia, udaje niepoczytalność.
+				Trafia do szpitala dla umysłowo chorych, gdzie twardą ręką rządzi siostra Ratched.
+			</Description>
+			<ReleaseYear>
+				1975
+			</ReleaseYear>
+			<Lead leadRefId="L01">
+				<Name>Jack</Name>
+				<LastName>Nicholson</LastName>
+				<BirthDate>22-04-1937</BirthDate>
+			</Lead>
+			<Director directorId="D11">
+				<Name>Milos</Name>
+				<LastName>Forman</LastName>
+				<BirthDate>18-02-1932</BirthDate>
+			</Director>
+		</Film>
+		<Film filmId="F12">
+			<Name>Choć goni nas czas</Name>
+			<Categories>
+				<Category catRefId="CAT02">Dramat</Category>
+				<Category catRefId="CAT06">Komedia</Category>
+			</Categories>
+			<Description>
+				Historia dwóch umierających mężczyzn, którzy pod wpływem szalonych przygód zostają przyjaciółmi.
+			</Description>
+			<ReleaseYear>
+				2007
+			</ReleaseYear>
+			<Lead leadRefId="L01">
+				<Name>Jack</Name>
+				<LastName>Nicholson</LastName>
+				<BirthDate>22-04-1937</BirthDate>
+			</Lead>
+			<Director directorId="D12">
+				<Name>Rob</Name>
+				<LastName>Reiner</LastName>
+				<BirthDate>06-03-1945</BirthDate>
+			</Director>
+		</Film>
+		<Film filmId="F13">
+			<Name>Kiedy Harry poznał Sally</Name>
+			<Categories>
+				<Category catRefId="CAT06">Komedia</Category>
+			</Categories>
+			<Description>
+				Harry i Sally poznają się w czasach studenckich, ale nie pałają do siebie zbytnią sympatią.
+				Spotkanie po latach daje jednak początek przyjaźni.
+			</Description>
+			<ReleaseYear>
+				1985
+			</ReleaseYear>
+			<Lead leadId="L10">
+				<Name>Billy Cristal</Name>
+				<LastName>Sheen</LastName>
+				<BirthDate>03-08-1940</BirthDate>
+			</Lead>
+			<Director directorRefId="D03">
+				<Name>Rob</Name>
+				<LastName>Reiner</LastName>
+				<BirthDate>06-03-1945</BirthDate>
+			</Director>
+		</Film>
+		<Film filmId="F14">
+			<Name>Słodka zemsta</Name>
+			<Categories>
+				<Category catRefId="CAT04">Akcja</Category>
+				<Category catRefId="CAT05">Sci-Fi</Category>
+			</Categories>
+			<Description>
+				Zdradzona żona dokonuje zemsty na niewiernym mężu, przyklejając go taśmą izolacyjną do sedesu. Wkrótce ich dom staje się celem włamywaczy.
+			</Description>
+			<ReleaseYear>
+				2007
+			</ReleaseYear>
+			<Lead leadId="L11">
+				<Name>Meg</Name>
+				<LastName>Ryan</LastName>
+				<BirthDate>19-11-1961</BirthDate>
+			</Lead>
+			<Director directorId="D13">
+				<Name>Cheryl</Name>
+				<LastName>Hines</LastName>
+				<BirthDate>21-09-1965</BirthDate>
+			</Director>
+		</Film>
+		<Film filmId="F15">
+			<Name>Rock'N'Rolla</Name>
+			<Categories>
+				<Category catRefId="CAT08">Kryminalny</Category>
+			</Categories>
+			<Description>
+				Grupa drobnych złodziei zadłuża się u szefa londyńskiego półświatka.
+				Ten jednocześnie usiłuje ubić interes z rosyjskim miliarderem i zapanować nad swoim pasierbem,
+				uzależnionym od narkotyków rockandrollowcem. 
+			</Description>
+			<ReleaseYear>
+				2008
+			</ReleaseYear>
+			<Lead leadId="L12">
+				<Name>Gerard</Name>
+				<LastName>Butler</LastName>
+				<BirthDate>13-11-1969</BirthDate>
+			</Lead>
+			<Director directorId="D14">
+				<Name>Guy</Name>
+				<LastName>Ritchie</LastName>
+				<BirthDate>10-10-1968</BirthDate>
+			</Director>
+		</Film>
+		<!-- VALID to this point -->
+		<Film filmId="F06">
+			<Name>Święci z Bostonu</Name>
+			<Categories>
+				<Category catRefId="CAT04">Akcja</Category>
+			</Categories>
+			<Description>
+				Dwaj bracia podejmują walkę z bostońskimi złoczyńcami. Są przekonani, że sam Bóg powierzył im taką misję.
+			</Description>
+			<ReleaseYear>
+				1999
+			</ReleaseYear>
+			<Lead leadId="L06">
+				<Name>Norman</Name>
+				<LastName>Reedus</LastName>
+				<BirthDate>06-01-1969</BirthDate>
+			</Lead>
+			<Director directorId="D06">
+				<Name>Troy</Name>
+				<LastName>Duffy</LastName>
+				<BirthDate>08-06-1971</BirthDate>
+			</Director>
+		</Film>
+		<Film filmId="F07">
+			<Name>Dzień świra</Name>
+			<Categories>
+				<Category catRefId="CAT02">Dramat</Category>
+				<Category catRefId="CAT06">Komedia</Category>
+			</Categories>
+			<Description>
+				Adaś Miauczyński, 49-letni rozwiedziony polonista, żyje w kręgu swoich natręctw, nie potrafiąc wyrwać się z nudy i rutyny dnia codziennego.
+			</Description>
+			<ReleaseYear>
+				2002
+			</ReleaseYear>
+			<Lead leadId="L07">
+				<Name>Marek</Name>
+				<LastName>Kondrat</LastName>
+				<BirthDate>18-10-1950</BirthDate>
+			</Lead>
+			<Director directorId="D07">
+				<Name>Marek</Name>
+				<LastName>Koterski</LastName>
+				<BirthDate>03-06-1942</BirthDate>
+			</Director>
+		</Film>
+		<Film filmId="F08">
+			<Name>Wyspa psów</Name>
+			<Categories>
+				<Category catRefId="CAT06">Komedia</Category>
+				<Category catRefId="CAT07">Przygodowy</Category>
+			</Categories>
+			<Description>
+				Osadzona w Japonii historia chłopca podróżującego w celu odnalezienia swojego zaginionego psa. 
+			</Description>
+			<ReleaseYear>
+				2018
+			</ReleaseYear>
+			<Lead leadId="L08">
+				<Name>Bryan</Name>
+				<LastName>Cranston</LastName>
+				<BirthDate>07-03-1956</BirthDate>
+			</Lead>
+			<Director directorId="D08">
+				<Name>Wes</Name>
+				<LastName>Adnerson</LastName>
+				<BirthDate>01-05-1969</BirthDate>
+			</Director>
+		</Film>
+		<Film filmId="F09">
+			<Name>Ostatni Mohikanin</Name>
+			<Categories>
+				<Category catRefId="CAT02">Daramat</Category>
+			</Categories>
+			<Description>
+				Wychowywany przez Indian Sokole Oko staje do walki z najeźdźcami i zakochuje się w córce angielskiego dowódcy. 
+			</Description>
+			<ReleaseYear>
+				1992
+			</ReleaseYear>
+			<Lead leadId="L09">
+				<Name>Daniel</Name>
+				<LastName>CDay-Lewis</LastName>
+				<BirthDate>29-04-1957</BirthDate>
+			</Lead>
+			<Director directorId="D09">
+				<Name>Michael</Name>
+				<LastName>Mann</LastName>
+				<BirthDate>05-02-1943</BirthDate>
+			</Director>
+		</Film>
+		<Film filmId="F10">
+			<Name>Lepiej być nie może</Name>
+			<Categories>
+				<Category catRefId="CAT02">Daramat</Category>
+				<Category catRefId="CAT06">Komedia</Category>
+			</Categories>
+			<Description>
+				Ekscentryczny Melvin zakochuje się w kelnerce z problemami. 
+			</Description>
+			<ReleaseYear>
+				1997
+			</ReleaseYear>
+			<Lead leadRefId="L01">
+				<Name>Jack</Name>
+				<LastName>Nicholson</LastName>
+				<BirthDate>22-04-1937</BirthDate>
+			</Lead>
+			<Director directorId="D10">
+				<Name>James L.</Name>
+				<LastName>Brooks</LastName>
+				<BirthDate>09-05-1940</BirthDate>
 			</Director>
 		</Film>
 	</Films>

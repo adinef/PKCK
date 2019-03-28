@@ -56,31 +56,33 @@ Category {
 	margin-right: 10px;
 }
 
-Category[catId="CAT01"]::before,  Category[catRefId="CAT01"]::before{
+Category::before {
 	display: inline-block;
 	content: ' ';
-	background-color: red;
+	background-color: gray;
 	margin-right: 5px;
 	width: 12px;
 	height: 12px;
+}
+
+Category[catId="CAT01"]::before,  Category[catRefId="CAT01"]::before{
+	background-color: red;
 }
 
 Category[catId="CAT02"]::before,  Category[catRefId="CAT02"]::before{
-	display: inline-block;
-	content: ' ';
 	background-color: green;
-	margin-right: 5px;
-	width: 12px;
-	height: 12px;
 }
 
 Category[catId="CAT03"]::before,  Category[catRefId="CAT03"]::before{
-	display: inline-block;
-	content: ' ';
 	background-color: blue;
-	margin-right: 5px;
-	width: 12px;
-	height: 12px;
+}
+
+Category[catId="CAT04"]::before,  Category[catRefId="CAT04"]::before{
+	background-color: violet;
+}
+
+Category[catId="CAT05"]::before,  Category[catRefId="CAT05"]::before{
+	background-color: yellow;
 }
 
 /* ACTORS RELATED */
