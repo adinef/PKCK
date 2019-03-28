@@ -145,7 +145,7 @@ Lead > LastName::before {
 
 Lead > BirthDate::before {
 	font-style: italic;
-	content: "Birthday: ";
+	content: "Birthdate: ";
 }
 
 
