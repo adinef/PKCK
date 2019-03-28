@@ -6,7 +6,7 @@
 }
 
 FilmDatabase {
-	background-image: url("bck.jpg");
+	background: rgb(200, 200, 160);
 	background-size: cover;
 }
 
@@ -20,26 +20,34 @@ Head {
 	height: 70px;
 	border: 1px solid gray;
 }
-
 Head > Author {
-	display: block;
+	display: inline-block;
+}
+
+Head > EMail {
+	display: inline-block;
+
+}
+
+Head> EMail, Head > Author {
 	position: relative;
 	font-style: italic;
 	font-size: 0.9rem;
-}
-
-Head > Author:hover {
-	font-size: 1.5rem;
 }
 
 Head > Name {
 	position: relative;
 	display: block;
 	margin: 0 auto;
-	font-style: bold;
 	width: 270px;
+	font-style: bold;
 	font-size: 2rem;
 }
+
+Head > Author::after {
+	content: ", ";
+}
+
 /* CATEGORY */
 
 FilmDatabase > Categories {

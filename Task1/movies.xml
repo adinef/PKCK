@@ -3,9 +3,9 @@
 <!DOCTYPE FilmDatabase SYSTEM "films.dtd"> 
 <FilmDatabase>
 	<Head>
-		<Author>Adrian Fijałkowski, 210171</Author>
-		<Name>Baza filmów</Name>
+		<Author>Adrian Fijałkowski</Author>
 		<EMail>210171@edu.p.lodz.pl</EMail>
+		<Name>Baza filmów</Name>
 	</Head>
 	<Categories>
 		<Category catId="CAT01">Horror</Category>

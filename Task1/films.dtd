@@ -1,6 +1,6 @@
 
 <!ELEMENT FilmDatabase (Head, Categories, Films)> 
-<!ELEMENT Head (Author, Name, EMail)>
+<!ELEMENT Head (Author, EMail, Name)>
 <!ELEMENT Author (#PCDATA)>
 <!ELEMENT EMail (#PCDATA)>
 <!ELEMENT Name (#PCDATA)>
