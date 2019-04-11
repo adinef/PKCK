@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/css" href="style.css"?>
-<FilmDatabase xmlns="movies.xsd">
+<FilmDatabase xmlns="http://it.p.lodz.pl/pkck"
+		xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" 
+		xsd:schemaLocation="http://it.p.lodz.pl/pkck movies.xsd">
 	<Head>
 		<Author>Adrian Fijałkowski</Author>
 		<EMail>210171@edu.p.lodz.pl</EMail>
@@ -36,12 +38,12 @@
 			<Lead leadId="L01">
 				<Name>Jack</Name>
 				<LastName>Nicholson</LastName>
-				<BirthDate>22-04-1937</BirthDate>
+				<BirthDate>1937-04-22</BirthDate>
 			</Lead>
 			<Director directorId="D01">
 				<Name>Stanley</Name>
 				<LastName>Kubrick</LastName>
-				<BirthDate>26-07-1928</BirthDate>
+				<BirthDate>1928-07-26</BirthDate>
 			</Director>
 		</Film>
 		<Film filmId="F02">
@@ -62,12 +64,12 @@
 			<Lead leadId="L02">
 				<Name>Emile</Name>
 				<LastName>Hirsch</LastName>
-				<BirthDate>13-03-1985</BirthDate>
+				<BirthDate>1985-03-13</BirthDate>
 			</Lead>
 			<Director directorId="D02">
 				<Name>Sean</Name>
 				<LastName>Penn</LastName>
-				<BirthDate>17-08-1960</BirthDate>
+				<BirthDate>1960-08-17</BirthDate>
 			</Director>
 		</Film>
 		<Film filmId="F03">
@@ -90,12 +92,12 @@
 			<Lead leadId="L03">
 				<Name>Martin</Name>
 				<LastName>Sheen</LastName>
-				<BirthDate>03-08-1940</BirthDate>
+				<BirthDate>1940-08-03</BirthDate>
 			</Lead>
 			<Director directorId="D03">
 				<Name>Francis Ford</Name>
 				<LastName>Copolla</LastName>
-				<BirthDate>07-04-1939</BirthDate>
+				<BirthDate>1939-04-07</BirthDate>
 			</Director>
 		</Film>
 		<Film filmId="F04">
@@ -116,12 +118,12 @@
 			<Lead leadId="L04">
 				<Name>Brie</Name>
 				<LastName>Larson</LastName>
-				<BirthDate>01-10-1989</BirthDate>
+				<BirthDate>1989-10-01</BirthDate>
 			</Lead>
 			<Director directorId="D04">
 				<Name>Anna</Name>
 				<LastName>Bond</LastName>
-				<BirthDate></BirthDate>
+				<BirthDate>1990-02-02</BirthDate>
 			</Director>
 		</Film>
 		<Film filmId="F05">
@@ -141,12 +143,12 @@
 			<Lead leadId="L05">
 				<Name>Tom</Name>
 				<LastName>Hanks</LastName>
-				<BirthDate>09-07-1956</BirthDate>
+				<BirthDate>1956-07-09</BirthDate>
 			</Lead>
 			<Director directorId="D05">
 				<Name>Johnathan</Name>
 				<LastName>Demme</LastName>
-				<BirthDate>22-02-1944</BirthDate>
+				<BirthDate>1944-02-22</BirthDate>
 			</Director>
 		</Film>
 		<Film filmId="F06">
@@ -166,12 +168,12 @@
 			<Lead leadId="L06">
 				<Name>Norman</Name>
 				<LastName>Reedus</LastName>
-				<BirthDate>06-01-1969</BirthDate>
+				<BirthDate>1969-01-06</BirthDate>
 			</Lead>
 			<Director directorId="D06">
 				<Name>Troy</Name>
 				<LastName>Duffy</LastName>
-				<BirthDate>08-06-1971</BirthDate>
+				<BirthDate>1971-06-08</BirthDate>
 			</Director>
 		</Film>
 		<Film filmId="F07">
@@ -192,12 +194,12 @@
 			<Lead leadId="L07">
 				<Name>Marek</Name>
 				<LastName>Kondrat</LastName>
-				<BirthDate>18-10-1950</BirthDate>
+				<BirthDate>1950-10-18</BirthDate>
 			</Lead>
 			<Director directorId="D07">
 				<Name>Marek</Name>
 				<LastName>Koterski</LastName>
-				<BirthDate>03-06-1942</BirthDate>
+				<BirthDate>1942-06-03</BirthDate>
 			</Director>
 		</Film>
 		<Film filmId="F08">
@@ -218,12 +220,12 @@
 			<Lead leadId="L08">
 				<Name>Bryan</Name>
 				<LastName>Cranston</LastName>
-				<BirthDate>07-03-1956</BirthDate>
+				<BirthDate>1956-03-07</BirthDate>
 			</Lead>
 			<Director directorId="D08">
 				<Name>Wes</Name>
 				<LastName>Adnerson</LastName>
-				<BirthDate>01-05-1969</BirthDate>
+				<BirthDate>1969-05-01</BirthDate>
 			</Director>
 		</Film>
 		<Film filmId="F09">
@@ -242,13 +244,13 @@
 			</ReleaseYear>
 			<Lead leadId="L09">
 				<Name>Daniel</Name>
-				<LastName>CDay-Lewis</LastName>
-				<BirthDate>29-04-1957</BirthDate>
+				<LastName>Day-Lewis</LastName>
+				<BirthDate>1957-04-29</BirthDate>
 			</Lead>
 			<Director directorId="D09">
 				<Name>Michael</Name>
 				<LastName>Mann</LastName>
-				<BirthDate>05-02-1943</BirthDate>
+				<BirthDate>1943-02-05</BirthDate>
 			</Director>
 		</Film>
 		<Film filmId="F10">
@@ -269,12 +271,12 @@
 			<Lead leadRefId="L01">
 				<Name>Jack</Name>
 				<LastName>Nicholson</LastName>
-				<BirthDate>22-04-1937</BirthDate>
+				<BirthDate>1937-04-22</BirthDate>
 			</Lead>
 			<Director directorId="D10">
 				<Name>James L.</Name>
 				<LastName>Brooks</LastName>
-				<BirthDate>09-05-1940</BirthDate>
+				<BirthDate>1940-05-09</BirthDate>
 			</Director>
 		</Film>
 		<Film filmId="F11">
@@ -295,12 +297,12 @@
 			<Lead leadRefId="L01">
 				<Name>Jack</Name>
 				<LastName>Nicholson</LastName>
-				<BirthDate>22-04-1937</BirthDate>
+				<BirthDate>1937-04-22</BirthDate>
 			</Lead>
 			<Director directorId="D11">
 				<Name>Milos</Name>
 				<LastName>Forman</LastName>
-				<BirthDate>18-02-1932</BirthDate>
+				<BirthDate>1932-02-18</BirthDate>
 			</Director>
 		</Film>
 		<Film filmId="F12">
@@ -321,12 +323,12 @@
 			<Lead leadRefId="L01">
 				<Name>Jack</Name>
 				<LastName>Nicholson</LastName>
-				<BirthDate>22-04-1937</BirthDate>
+				<BirthDate>1939-04-22</BirthDate>
 			</Lead>
 			<Director directorId="D12">
 				<Name>Rob</Name>
 				<LastName>Reiner</LastName>
-				<BirthDate>06-03-1945</BirthDate>
+				<BirthDate>1945-03-06</BirthDate>
 			</Director>
 		</Film>
 		<Film filmId="F13">
@@ -347,12 +349,12 @@
 			<Lead leadId="L10">
 				<Name>Billy Cristal</Name>
 				<LastName>Sheen</LastName>
-				<BirthDate>03-08-1940</BirthDate>
+				<BirthDate>1940-08-03</BirthDate>
 			</Lead>
 			<Director directorRefId="D03">
 				<Name>Rob</Name>
 				<LastName>Reiner</LastName>
-				<BirthDate>06-03-1945</BirthDate>
+				<BirthDate>1945-03-06</BirthDate>
 			</Director>
 		</Film>
 		<Film filmId="F14">
@@ -373,12 +375,12 @@
 			<Lead leadId="L11">
 				<Name>Meg</Name>
 				<LastName>Ryan</LastName>
-				<BirthDate>19-11-1961</BirthDate>
+				<BirthDate>1961-11-19</BirthDate>
 			</Lead>
 			<Director directorId="D13">
 				<Name>Cheryl</Name>
 				<LastName>Hines</LastName>
-				<BirthDate>21-09-1965</BirthDate>
+				<BirthDate>1965-09-29</BirthDate>
 			</Director>
 		</Film>
 		<Film filmId="F15">
@@ -400,12 +402,12 @@
 			<Lead leadId="L12">
 				<Name>Gerard</Name>
 				<LastName>Butler</LastName>
-				<BirthDate>13-11-1969</BirthDate>
+				<BirthDate>1969-11-13</BirthDate>
 			</Lead>
 			<Director directorId="D14">
 				<Name>Guy</Name>
 				<LastName>Ritchie</LastName>
-				<BirthDate>10-10-1968</BirthDate>
+				<BirthDate>1968-10-10</BirthDate>
 			</Director>
 		</Film>
 		<Film filmId="F16">
@@ -427,12 +429,12 @@
 			<Lead leadId="L13">
 				<Name>Hugh</Name>
 				<LastName>Jackman</LastName>
-				<BirthDate>12-10-1968</BirthDate>
+				<BirthDate>1968-10-12</BirthDate>
 			</Lead>
 			<Director directorId="D15">
 				<Name>Tom</Name>
 				<LastName>Hooper</LastName>
-				<BirthDate>01-10-1972</BirthDate>
+				<BirthDate>1972-10-01</BirthDate>
 			</Director>
 		</Film>
 		<Film filmId="F17">
@@ -453,12 +455,12 @@
 			<Lead leadId="L14">
 				<Name>Brad</Name>
 				<LastName>Pitt</LastName>
-				<BirthDate>18-12-1963</BirthDate>
+				<BirthDate>1963-12-18</BirthDate>
 			</Lead>
 			<Director directorRefId="D14">
 				<Name>Guy</Name>
 				<LastName>Ritchie</LastName>
-				<BirthDate>10-10-1968</BirthDate>
+				<BirthDate>1968-10-10</BirthDate>
 			</Director>
 		</Film>
 		<Film filmId="F18">
@@ -481,12 +483,12 @@
 			<Lead leadId="L15">
 				<Name>Eddie</Name>
 				<LastName>Redmayne</LastName>
-				<BirthDate>06-01-1982</BirthDate>
+				<BirthDate>1982-01-06</BirthDate>
 			</Lead>
 			<Director directorId="D16">
 				<Name>David</Name>
 				<LastName>Yates</LastName>
-				<BirthDate>30-11-1962</BirthDate>
+				<BirthDate>1962-11-30</BirthDate>
 			</Director>
 		</Film>
 		<Film filmId="F19">
@@ -506,12 +508,12 @@
 			<Lead leadId="L16">
 				<Name>Andrzej</Name>
 				<LastName>Chyra</LastName>
-				<BirthDate>27-08-1964</BirthDate>
+				<BirthDate>1964-08-27</BirthDate>
 			</Lead>
 			<Director directorId="D17">
 				<Name>Feliks</Name>
 				<LastName>Falk</LastName>
-				<BirthDate>25-02-1941</BirthDate>
+				<BirthDate>1941-02-25</BirthDate>
 			</Director>
 		</Film>
 		<Film filmId="F20">
@@ -532,12 +534,12 @@
 			<Lead leadId="L17">
 				<Name>Ryan</Name>
 				<LastName>Gosling</LastName>
-				<BirthDate>12-11-1980</BirthDate>
+				<BirthDate>1980-11-12</BirthDate>
 			</Lead>
 			<Director directorId="D18">
 				<Name>Nicholas</Name>
 				<LastName>Winding Refn</LastName>
-				<BirthDate>29-09-1970</BirthDate>
+				<BirthDate>1970-06-29</BirthDate>
 			</Director>
 		</Film>
 	</Films>

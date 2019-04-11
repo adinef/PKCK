@@ -1,5 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://it.p.lodz.pl/pkck"
+			xmlns:filmsSpace="http://it.p.lodz.pl/pkck/210171"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://it.p.lodz.pl/pkck"
+			elementFormDefault="qualified">
   <xs:element name="FilmDatabase">
     <xs:complexType>
       <xs:sequence>
@@ -8,6 +12,27 @@
         <xs:element ref="Films" />
       </xs:sequence>
     </xs:complexType>
+  </xs:element>
+  <xs:element name="Author">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:pattern value="([a-żA-Ż ])*"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="EMail">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:whiteSpace value="collapse"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="Name">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:pattern value="([a-żA-Ż .':])*"/>
+      </xs:restriction>
+    </xs:simpleType>
   </xs:element>
   <xs:element name="Head">
     <xs:complexType>
@@ -18,32 +43,10 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="Author">
-    <xs:simpleType>
-      <xs:restriction base="xs:string">
-        <xs:pattern value="[a-z]"/>
-      </xs:restriction>
-    </xs:simpleType>
-  </xs:element>
-  <xs:element name="EMail">
-    <xs:simpleType>
-      <xs:restriction base="xs:string">
-        <xs:whiteSpace value="collapse"/>
-        <xs:pattern value="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$"/>
-      </xs:restriction>
-    </xs:simpleType>
-  </xs:element>
-  <xs:element name="Name">
-    <xs:simpleType>
-      <xs:restriction base="xs:string">
-        <xs:pattern value="[a-z]"/>
-      </xs:restriction>
-    </xs:simpleType>
-  </xs:element>
   <xs:element name="LastName">
     <xs:simpleType>
       <xs:restriction base="xs:string">
-        <xs:pattern value="[a-z]"/>
+        <xs:pattern value="([a-żA-Ż -.'])*"/>
       </xs:restriction>
     </xs:simpleType>
   </xs:element>
