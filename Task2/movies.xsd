@@ -24,6 +24,7 @@
     <xs:simpleType>
       <xs:restriction base="xs:string">
         <xs:whiteSpace value="collapse"/>
+        <xs:pattern value="([a-z0-9])*(@)([a-z .])*(.)(a-z)*" />
       </xs:restriction>
     </xs:simpleType>
   </xs:element>
