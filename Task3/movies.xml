@@ -19,9 +19,7 @@
 	<Films>
 		<Film filmId="F01">
 			<Name>Lśnienie</Name>
-			<AvgScore>
-				8.2
-			</AvgScore>
+			<AvgScore>8.2</AvgScore>
 			<Categories>
 				<Category catRefId="CAT01">Horror</Category>
 			</Categories>
@@ -45,9 +43,7 @@
 		</Film>
 		<Film filmId="F02">
 			<Name>Wszystko za życie</Name>
-			<AvgScore>
-				8.0
-			</AvgScore>
+			<AvgScore>8.0</AvgScore>
 			<Categories>
 				<Category catRefId="CAT02">Dramat</Category>
 			</Categories>
@@ -71,9 +67,7 @@
 		</Film>
 		<Film filmId="F03">
 			<Name>Czas apokalipsy</Name>
-			<AvgScore>
-				8.5
-			</AvgScore>
+			<AvgScore>8.5</AvgScore>
 			<Categories>
 				<Category catRefId="CAT02">Dramat</Category>
 				<Category catRefId="CAT03">Wojenny</Category>
@@ -99,9 +93,7 @@
 		</Film>
 		<Film filmId="F04">
 			<Name>Kapitan Marvel</Name>
-			<AvgScore>
-				7.2
-			</AvgScore>
+			<AvgScore>7.2</AvgScore>
 			<Categories>
 				<Category catRefId="CAT04">Akcja</Category>
 				<Category catRefId="CAT05">Sci-Fi</Category>
@@ -125,9 +117,7 @@
 		</Film>
 		<Film filmId="F05">
 			<Name>Filadelfia</Name>
-			<AvgScore>
-				8.2
-			</AvgScore>
+			<AvgScore>8.2</AvgScore>
 			<Categories>
 				<Category catRefId="CAT02">Dramat</Category>
 			</Categories>
@@ -150,9 +140,7 @@
 		</Film>
 		<Film filmId="F06">
 			<Name>Święci z Bostonu</Name>
-			<AvgScore>
-				7.5
-			</AvgScore>
+			<AvgScore>7.5</AvgScore>
 			<Categories>
 				<Category catRefId="CAT04">Akcja</Category>
 			</Categories>
@@ -175,9 +163,7 @@
 		</Film>
 		<Film filmId="F07">
 			<Name>Dzień świra</Name>
-			<AvgScore>
-				8.1
-			</AvgScore>
+			<AvgScore>8.1</AvgScore>
 			<Categories>
 				<Category catRefId="CAT02">Dramat</Category>
 				<Category catRefId="CAT06">Komedia</Category>
@@ -201,9 +187,7 @@
 		</Film>
 		<Film filmId="F08">
 			<Name>Wyspa psów</Name>
-			<AvgScore>
-				7.2
-			</AvgScore>
+			<AvgScore>7.2</AvgScore>
 			<Categories>
 				<Category catRefId="CAT06">Komedia</Category>
 				<Category catRefId="CAT07">Przygodowy</Category>
@@ -227,9 +211,7 @@
 		</Film>
 		<Film filmId="F09">
 			<Name>Ostatni Mohikanin</Name>
-			<AvgScore>
-				7.9
-			</AvgScore>
+			<AvgScore>7.9</AvgScore>
 			<Categories>
 				<Category catRefId="CAT02">Dramat</Category>
 			</Categories>
@@ -252,9 +234,7 @@
 		</Film>
 		<Film filmId="F10">
 			<Name>Lepiej być nie może</Name>
-			<AvgScore>
-				7.6
-			</AvgScore>
+			<AvgScore>7.6</AvgScore>
 			<Categories>
 				<Category catRefId="CAT02">Dramat</Category>
 				<Category catRefId="CAT06">Komedia</Category>
@@ -278,9 +258,7 @@
 		</Film>
 		<Film filmId="F11">
 			<Name>Lot nad kukułczym gniazdem</Name>
-			<AvgScore>
-				8.3
-			</AvgScore>
+			<AvgScore>8.3</AvgScore>
 			<Categories>
 				<Category catRefId="CAT01">Horror</Category>
 			</Categories>
@@ -304,9 +282,7 @@
 		</Film>
 		<Film filmId="F12">
 			<Name>Choć goni nas czas</Name>
-			<AvgScore>
-				7.5
-			</AvgScore>
+			<AvgScore>7.5</AvgScore>
 			<Categories>
 				<Category catRefId="CAT02">Dramat</Category>
 				<Category catRefId="CAT06">Komedia</Category>
@@ -314,9 +290,7 @@
 			<Description>
 				Historia dwóch umierających mężczyzn, którzy pod wpływem szalonych przygód zostają przyjaciółmi.
 			</Description>
-			<ReleaseYear>
-				2007
-			</ReleaseYear>
+			<ReleaseYear>2007</ReleaseYear>
 			<Lead leadRefId="L01">
 				<Name>Jack</Name>
 				<LastName>Nicholson</LastName>
@@ -330,9 +304,7 @@
 		</Film>
 		<Film filmId="F13">
 			<Name>Kiedy Harry poznał Sally</Name>
-			<AvgScore>
-				7.4
-			</AvgScore>
+			<AvgScore>7.4</AvgScore>
 			<Categories>
 				<Category catRefId="CAT06">Komedia</Category>
 			</Categories>
@@ -356,9 +328,7 @@
 		</Film>
 		<Film filmId="F14">
 			<Name>Słodka zemsta</Name>
-			<AvgScore>
-				6.0
-			</AvgScore>
+			<AvgScore>6.0</AvgScore>
 			<Categories>
 				<Category catRefId="CAT04">Akcja</Category>
 				<Category catRefId="CAT05">Sci-Fi</Category>
@@ -382,9 +352,7 @@
 		</Film>
 		<Film filmId="F15">
 			<Name>Rock'N'Rolla</Name>
-			<AvgScore>
-				7.2
-			</AvgScore>
+			<AvgScore>7.2</AvgScore>
 			<Categories>
 				<Category catRefId="CAT08">Kryminalny</Category>
 			</Categories>
@@ -409,9 +377,7 @@
 		</Film>
 		<Film filmId="F16">
 			<Name>Les Misérables: Nędznicy</Name>
-			<AvgScore>
-				8.0
-			</AvgScore>
+			<AvgScore>8.0</AvgScore>
 			<Categories>
 				<Category catRefId="CAT02">Dramat</Category>
 			</Categories>
@@ -436,9 +402,7 @@
 		</Film>
 		<Film filmId="F17">
 			<Name>Przekręt</Name>
-			<AvgScore>
-				7.8
-			</AvgScore>
+			<AvgScore>7.8</AvgScore>
 			<Categories>
 				<Category catRefId="CAT06">Komedia</Category>
 				<Category catRefId="CAT08">Kryminał</Category>
@@ -462,9 +426,7 @@
 		</Film>
 		<Film filmId="F18">
 			<Name>Fantastyczne zwierzęta i jak je znaleźć</Name>
-			<AvgScore>
-				7.2
-			</AvgScore>
+			<AvgScore>7.2</AvgScore>
 			<Categories>
 				<Category catRefId="CAT06">Komedia</Category>
 				<Category catRefId="CAT07">Przygodowy</Category>
@@ -490,9 +452,7 @@
 		</Film>
 		<Film filmId="F19">
 			<Name>Komornik</Name>
-			<AvgScore>
-				7.5
-			</AvgScore>
+			<AvgScore>7.5</AvgScore>
 			<Categories>
 				<Category catRefId="CAT02">Dramat</Category>
 			</Categories>
@@ -515,9 +475,7 @@
 		</Film>
 		<Film filmId="F20">
 			<Name>Drive</Name>
-			<AvgScore>
-				8.0
-			</AvgScore>
+			<AvgScore>8.0</AvgScore>
 			<Categories>
 				<Category catRefId="CAT02">Dramat</Category>
 				<Category catRefId="CAT04">Akcja</Category>
