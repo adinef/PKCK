@@ -18,9 +18,11 @@
     <xsl:key name="CategoryKey" match="/FilmDatabase/Categories/Category" use="@catId"/>
     <xsl:key name="ActorKey" match="//Films/Film/Lead" use="@leadId"/>
 
-
     <xsl:template match="/">
         <xsl:element name="FilmDatabaseSummary">
+            <Generated>
+                <xsl:value-of  select="format-dateTime(current-dateTime(), '[D01]/[M01]/[Y0001]')"/>
+            </Generated>
             <xsl:call-template name="Author"/>
             <xsl:call-template name="CategoriesSummary"/>
             <xsl:call-template name="ActorsSummary"/>
