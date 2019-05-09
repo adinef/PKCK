@@ -13,7 +13,7 @@
                 xalan:indent-amount="4"
                 />
 
-    <!--<xsl:strip-space elements="*"/>-->
+    <xsl:strip-space elements="*"/>
 
     <xsl:key name="CategoryKey" match="/FilmDatabase/Categories/Category" use="@catId"/>
     <xsl:key name="ActorKey" match="//Films/Film/Lead" use="@leadId"/>
