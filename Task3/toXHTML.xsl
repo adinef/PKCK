@@ -19,7 +19,7 @@
                 <xsl:call-template name="Styles"/>
             </head>
             <body>
-                <p>Hey!</p>
+                <xsl:call-template name="Content"/>
             </body>
         </html>
     </xsl:template>
@@ -27,6 +27,166 @@
     <xsl:template name="Styles">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
               xmlns="http://www.w3.org/1999/xhtml"/>
+    </xsl:template>
+
+    <xsl:template name="Content">
+        <div xmlns="http://www.w3.org/1999/xhtml" class="container">
+            <xsl:call-template name="Author"/>
+            <xsl:call-template name="Categories"/>
+            <xsl:call-template name="Actors"/>
+            <xsl:call-template name="Films"/>
+        </div>
+    </xsl:template>
+
+    <xsl:template match="//Author" name="Author">
+        <div xmlns="http://www.w3.org/1999/xhtml" class="card">
+            <div class="card-body">
+                <h4 class="card-title">Autor</h4>
+                <div class="card-text">
+                    <div>
+                        <xsl:value-of select="//Author/Name"/>
+                    </div>
+                    <div>
+                        <xsl:value-of select="//Author/EMail"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </xsl:template>
+
+    <xsl:template match="//Categories" name="Categories">
+        <div xmlns="http://www.w3.org/1999/xhtml" class="card">
+            <div class="card-body">
+                <h4 class="card-title">Podsumowanie kategorii</h4>
+                <hr/>
+                <h5>Łacznie kategorii:</h5>
+                <div>
+                    <xsl:value-of select="//Categories/TotalCategories"/>
+                </div>
+                <hr/>
+                <h5>Kategorie (alfabetycznie)</h5>
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Kategoria</th>
+                            <th scope="col">Ilość filmów</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <xsl:for-each select="//Categories/Category">
+                            <xsl:sort select="Name"/>
+                            <tr>
+                                <td>
+                                    <span>
+                                        <xsl:value-of select="Name"/>
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="badge badge-primary badge-pill">
+                                        <xsl:value-of select="Count"/>
+                                    </span>
+                                </td>
+                            </tr>
+                        </xsl:for-each>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </xsl:template>
+
+    <xsl:template match="//Actors" name="Actors">
+        <div xmlns="http://www.w3.org/1999/xhtml" class="card">
+            <div class="card-body">
+                <h4 class="card-title">Podsumowanie aktorów</h4>
+                <hr/>
+                <h5>Aktorzy (zgodnie z ilością zagranych filmów)</h5>
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Imię i nazwisko</th>
+                            <th scope="col">Ilość filmów</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <xsl:for-each select="//Actors/Actor">
+                            <xsl:sort select="Roles" order="descending"/>
+                            <tr>
+                                <td>
+                                    <span>
+                                        <xsl:value-of select="Name"/>
+                                    </span>
+                                    <span>
+                                        <xsl:value-of select="LastName"/>
+                                    </span>
+                                </td>
+                                <td>
+                                    <span class="badge badge-primary badge-pill">
+                                        <xsl:value-of select="Roles"/>
+                                    </span>
+                                </td>
+                            </tr>
+                        </xsl:for-each>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </xsl:template>
+
+    <xsl:template match="//Films" name="Films">
+        <div xmlns="http://www.w3.org/1999/xhtml" class="card">
+            <div class="card-body">
+                <h4 class="card-title">Filmy</h4>
+                <hr/>
+                <h5>Wszystkich filmów:</h5>
+                <span> <xsl:value-of select="//Films/TotalFilms"/> </span>
+                <hr/>
+                <h5>Lista filmów</h5>
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">Tytuł</th>
+                            <th scope="col">Średni wynik</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <xsl:for-each select="//Films/Film">
+                            <xsl:sort select="Roles" order="descending"/>
+                            <tr>
+                                <td>
+                                    <span>
+                                        <xsl:value-of select="Name"/>
+                                    </span>
+                                </td>
+                                <td>
+                                    <xsl:choose>
+                                        <xsl:when test="AvgScore &gt; 7.99">
+                                            <span class="badge badge-info">
+                                                <xsl:value-of select="AvgScore"/>
+                                            </span>
+                                        </xsl:when>
+                                        <xsl:when test="AvgScore &gt; 5.99">
+                                            <span class="badge badge-success">
+                                                <xsl:value-of select="AvgScore"/>
+                                            </span>
+                                        </xsl:when>
+                                        <xsl:when test="AvgScore &gt; 3.99">
+                                            <span class="badge badge-warning">
+                                                <xsl:value-of select="AvgScore"/>
+                                            </span>
+                                        </xsl:when>
+                                        <xsl:when test="AvgScore &gt; 0">
+                                            <span class="badge badge-danger">
+                                                <xsl:value-of select="AvgScore"/>
+                                            </span>
+                                        </xsl:when>
+                                    </xsl:choose>
+                                </td>
+                            </tr>
+                        </xsl:for-each>
+                    </tbody>
+                </table>
+            </div>
+        </div>
     </xsl:template>
 
 </xsl:stylesheet>

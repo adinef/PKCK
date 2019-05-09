@@ -49,9 +49,9 @@
                     <Name>
                         <xsl:value-of select="text()"/>
                     </Name>
-                    <MoviesWithCategory>
+                    <Count>
                         <xsl:value-of select="count(//Films/Film/Categories/Category[@catRefId=current()/@catId])"/>
-                    </MoviesWithCategory>
+                    </Count>
                 </Category>
             </xsl:for-each>
         </Categories>
