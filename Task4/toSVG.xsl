@@ -40,7 +40,7 @@
                 fill: #FFFFEE;
                 }
 
-                .bar {
+                .bar, .bar_act, .text_over_crimson {
                 fill: #aaa;
                 height: 21px;
                 transition: fill .3s ease;
@@ -68,6 +68,15 @@
                 }
                 }
 
+                .bar_act:hover,
+                .bar_act:focus {
+                fill: blue !important;
+
+                text {
+                fill: red;
+                }
+                }
+
                 figcaption {
                 font-weight: bold;
                 color: #000;
@@ -79,12 +88,55 @@
                 }
 
                 author {
-                    background: rgba(0, 0, 0, 0.7);
+                background: rgba(0, 0, 0, 0.7);
+                }
+
+                .text_over_crimson:hover {
+                fill: orange !important;
                 }
 
             </style>
 
             <script type="text/javascript">
+                <![CDATA[
+                var tab = new Array();
+
+                function toggleScore(i, element) {
+                if (tab[i]) {
+                fadeIn(element);
+                tab[i] = false;
+                } else {
+                fadeOut(element);
+                tab[i] = true;
+                }
+                }
+
+                function fadeIn(element) {
+                var op = 1; // initial opacity
+                var timer = setInterval(function () {
+                if (op <= 0.1){
+                clearInterval(timer);
+                element.style.display = 'none';
+                }
+                element.style.opacity = op;
+                element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+                op -= op * 0.1;
+                }, 50);
+                }
+
+                function fadeOut(element) {
+                var op = 0.1; // initial opacity
+                element.style.display = 'block';
+                var timer = setInterval(function () {
+                if (op >= 1){
+                clearInterval(timer);
+                }
+                element.style.opacity = op;
+                element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+                op += op * 0.1;
+                }, 10);
+                }
+                ]]>
             </script>
 
             <xsl:apply-templates/>
@@ -100,10 +152,27 @@
     </xsl:template>
 
     <xsl:template match="Categories">
+        <xsl:variable name="vertical" select="110"/>
+        <xsl:variable name="horizontal" select="420"/>
         <svg:g id="rect">
-            <svg:text font-size="16" fill="white" font-weight="bold" text-anchor="middle" x="420" y="110" >
-                Kategorie z kardynalnością
-            </svg:text>
+            <xsl:element name="svg:text">
+                <xsl:attribute name="font-weight">
+                    <xsl:value-of select="'bold'"/>
+                </xsl:attribute>
+                <xsl:attribute name="font-size">
+                    <xsl:value-of select="16"/>
+                </xsl:attribute>
+                <xsl:attribute name="text-anchor">
+                    <xsl:value-of select="'middle'"/>
+                </xsl:attribute>
+                <xsl:attribute name="x">
+                    <xsl:value-of select="$horizontal"/>
+                </xsl:attribute>
+                <xsl:attribute name="y">
+                    <xsl:value-of select="$vertical"/>
+                </xsl:attribute>
+                <xsl:value-of select="'Kategorie z kardynalnością'"/>
+            </xsl:element>
             <xsl:for-each select="Category">
                 <xsl:element name="svg:g">
                     <xsl:attribute name="class">
@@ -117,7 +186,7 @@
                             <xsl:value-of select="19"/>
                         </xsl:attribute>
                         <xsl:attribute name="y">
-                            <xsl:value-of select="position() * 25  +110"/>
+                            <xsl:value-of select="position() * 25  + $vertical"/>
                         </xsl:attribute>
                         <xsl:attribute name="x">
                             <xsl:value-of select="320"/>
@@ -131,9 +200,134 @@
                             <xsl:value-of select="'.35em'"/>
                         </xsl:attribute>
                         <xsl:attribute name="y">
-                            <xsl:value-of select="position() * 25 + 10 + 110"/>
+                            <xsl:value-of select="position() * 25 + 10 + $vertical"/>
                         </xsl:attribute>
-                            <xsl:value-of select="concat(./Count, ' - ', ./Name)"/>
+                        <xsl:value-of select="concat(./Count, ' - ', ./Name)"/>
+                    </xsl:element>
+                </xsl:element>
+            </xsl:for-each>
+        </svg:g>
+    </xsl:template>
+
+    <xsl:template match="Actors">
+        <xsl:variable name="vertical" select="400"/>
+        <xsl:variable name="horizontal" select="420"/>
+        <svg:g id="rect">
+            <xsl:element name="svg:text">
+                <xsl:attribute name="font-weight">
+                    <xsl:value-of select="'bold'"/>
+                </xsl:attribute>
+                <xsl:attribute name="font-size">
+                    <xsl:value-of select="16"/>
+                </xsl:attribute>
+                <xsl:attribute name="text-anchor">
+                    <xsl:value-of select="'middle'"/>
+                </xsl:attribute>
+                <xsl:attribute name="x">
+                    <xsl:value-of select="$horizontal"/>
+                </xsl:attribute>
+                <xsl:attribute name="y">
+                    <xsl:value-of select="$vertical"/>
+                </xsl:attribute>
+                <xsl:value-of select="'Aktorzy wraz z ilością zagranych roli'"/>
+            </xsl:element>
+            <xsl:for-each select="Actor">
+                <xsl:element name="svg:g">
+                    <xsl:attribute name="class">
+                        <xsl:value-of select="'bar_act'"/>
+                    </xsl:attribute>
+                    <xsl:element name="svg:rect">
+                        <xsl:attribute name="width">
+                            <xsl:value-of select="number(./Roles) * 10"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="height">
+                            <xsl:value-of select="19"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="y">
+                            <xsl:value-of select="position() * 25  + $vertical"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="x">
+                            <xsl:value-of select="320"/>
+                        </xsl:attribute>
+                    </xsl:element>
+                    <xsl:element name="svg:text">
+                        <xsl:attribute name="x">
+                            <xsl:value-of select="number(./Roles) * 10 + 5 + 320 + number(./Roles)"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="dy">
+                            <xsl:value-of select="'.35em'"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="y">
+                            <xsl:value-of select="position() * 25 + 10 + $vertical"/>
+                        </xsl:attribute>
+                        <xsl:value-of select="concat(./Roles, ' - ', ./Name, ' ', ./LastName)"/>
+                    </xsl:element>
+                </xsl:element>
+            </xsl:for-each>
+        </svg:g>
+    </xsl:template>
+
+
+    <xsl:template match="Films">
+        <xsl:variable name="vertical" select="110"/>
+        <xsl:variable name="horizontal" select="650"/>
+        <svg:g id="rect">
+            <xsl:element name="svg:text">
+                <xsl:attribute name="font-weight">
+                    <xsl:value-of select="'bold'"/>
+                </xsl:attribute>
+                <xsl:attribute name="font-size">
+                    <xsl:value-of select="16"/>
+                </xsl:attribute>
+                <xsl:attribute name="text-anchor">
+                    <xsl:value-of select="'middle'"/>
+                </xsl:attribute>
+                <xsl:attribute name="x">
+                    <xsl:value-of select="$horizontal + 120"/>
+                </xsl:attribute>
+                <xsl:attribute name="y">
+                    <xsl:value-of select="$vertical"/>
+                </xsl:attribute>
+                <xsl:value-of select="'Wszystkie filmy, z ocenami'"/>
+            </xsl:element>
+            <xsl:for-each select="Film">
+                <xsl:element name="svg:g">
+                    <xsl:attribute name="class">
+                        <xsl:value-of select="'text_over_crimson'"/>
+                    </xsl:attribute>
+                    <xsl:element name="svg:text">
+                        <xsl:attribute name="x">
+                            <xsl:value-of select="$horizontal"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="dy">
+                            <xsl:value-of select="'.35em'"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="y">
+                            <xsl:value-of select="position() * 35 + 10 + $vertical"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="onclick">
+                            <xsl:value-of
+                                    select="concat('toggleScore(', string(position()), ', ', concat('&quot;mv', string(position())), '&quot;)')"/>
+                        </xsl:attribute>
+                        <xsl:value-of select="./Name"/>
+                    </xsl:element>
+                    <xsl:element name="svg:text">
+                        <xsl:attribute name="class">
+                            <xsl:value-of select="'hidden'"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="id">
+                            <xsl:value-of select="concat('mv', string(position()))"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="x">
+                            <xsl:value-of select="$horizontal + 450"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="dy">
+                            <xsl:value-of select="'.35em'"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="y">
+                            <xsl:value-of select="position() * 35 + 10 + $vertical"/>
+                        </xsl:attribute>
+                        <xsl:value-of select="./AvgScore"/>
                     </xsl:element>
                 </xsl:element>
             </xsl:for-each>
@@ -141,14 +335,6 @@
     </xsl:template>
 
     <xsl:template name="Buttons">
-        <a xlink:href="biblioteka_output.xhtml" target="_blank">
-            <svg:g class="button" cursor="pointer">
-                <svg:rect x="15" y="15" width="100" height="60" fill="#C4C4C4" stroke="black"/>
-                <svg:text x="38" y="40" fill="white" font-size="16">Raport</svg:text>
-                <svg:text x="38" y="60" fill="white" font-size="16">XHTML</svg:text>
-            </svg:g>
-        </a>
-
         <a xlink:href="biblioteka_output.pdf" target="_blank">
             <svg:g class="button" cursor="pointer">
                 <svg:rect x="15" y="90" width="100" height="60" fill="#C4C4C4" stroke="black"/>
