@@ -14,18 +14,20 @@
 
     <xsl:template match="/">
 
-        <svg:svg width="1280" height="768" font-family="Verdana">
+        <svg:svg width="1280" height="920" font-family="Verdana">
             <svg:desc>Biblioteka filmów, dane</svg:desc>
             <svg:title>Raport, biblioteka filmów</svg:title>
 
             <svg:defs>
                 <svg:linearGradient id="gradient">
-                    <svg:stop offset="0%" style="stop-color: #000000;"/>
-                    <svg:stop offset="100%" style="stop-color: #ffebf4;"/>
+                    <svg:stop offset="0%" style="stop-color: white;"/>
+                    <svg:stop offset="28%" style="stop-color: gray;"/>
+                    <svg:stop offset="80%" style="stop-color: gray;"/>
+                    <svg:stop offset="100%" style="stop-color: white;"/>
                 </svg:linearGradient>
             </svg:defs>
 
-            <!--<svg:rect x="0" y="0" width="840" height="500" fill="url(#gradient)" stroke-width="8" stroke="#FFDC23"/>-->
+            <svg:rect x="0" y="0" width="1280" height="920" fill="url(#gradient)" stroke="crimson" stroke-width="2" stroke-opacity="0.2"/>
 
             <svg:text x="430" y="55" font-size="28" fill="white" stroke="black" stroke-width="1" font-weight="bold"
                       text-anchor="middle">
@@ -95,18 +97,31 @@
                 fill: orange !important;
                 }
 
+                .score {
+                    display: block;
+                    fill: white;
+                }
+
             </style>
 
             <script type="text/javascript">
                 <![CDATA[
-                var tab = new Array();
+                var tab = new Array(50);
+                for (let i = 0; i < 50; i++) {
+                    tab[i] = true;
+                }
 
                 function toggleScore(i, element) {
+                eById = document.getElementsByClassName(element);
+                console.log(eById);
+                console.log(tab[i]);
                 if (tab[i]) {
-                fadeIn(element);
+                fadeOut(eById[0]);
+                fadeOut(eById[1]);
                 tab[i] = false;
                 } else {
-                fadeOut(element);
+                fadeIn(eById[0]);
+                fadeIn(eById[1]);
                 tab[i] = true;
                 }
                 }
@@ -145,7 +160,7 @@
 
     <xsl:template match="Author" name="Author">
         <svg:g id="autor_dane">
-            <svg:text x="420" y="420" font-size="16" fill="black" text-anchor="middle" class="author">
+            <svg:text x="600" y="850" font-size="16" fill="black" text-anchor="middle" class="author">
                 <xsl:value-of select="concat(./Name, ', ', ./EMail)"/>
             </svg:text>
         </svg:g>
@@ -311,21 +326,41 @@
                         </xsl:attribute>
                         <xsl:value-of select="./Name"/>
                     </xsl:element>
-                    <xsl:element name="svg:text">
-                        <xsl:attribute name="class">
-                            <xsl:value-of select="'hidden'"/>
+                    <xsl:element name="svg:rect">
+                        <xsl:attribute name="style">
+                            <xsl:value-of select="'opacity: 0; fill: red;'"/>
                         </xsl:attribute>
-                        <xsl:attribute name="id">
+                        <xsl:attribute name="class">
+                            <xsl:value-of select="concat('mv', string(position()), ' ', 'score')"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="x">
+                            <xsl:value-of select="$horizontal + 455"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="y">
+                            <xsl:value-of select="position() * 35 + $vertical"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="width">
+                            <xsl:value-of select="30"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="height">
+                            <xsl:value-of select="20"/>
+                        </xsl:attribute>
+                    </xsl:element>
+                    <xsl:element name="svg:text">
+                        <xsl:attribute name="style">
+                            <xsl:value-of select="'opacity: 0;'"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="class">
                             <xsl:value-of select="concat('mv', string(position()))"/>
                         </xsl:attribute>
                         <xsl:attribute name="x">
-                            <xsl:value-of select="$horizontal + 450"/>
-                        </xsl:attribute>
-                        <xsl:attribute name="dy">
-                            <xsl:value-of select="'.35em'"/>
+                            <xsl:value-of select="$horizontal + 460"/>
                         </xsl:attribute>
                         <xsl:attribute name="y">
-                            <xsl:value-of select="position() * 35 + 10 + $vertical"/>
+                            <xsl:value-of select="position() * 35 + $vertical"/>
+                        </xsl:attribute>
+                        <xsl:attribute name="dy">
+                            <xsl:value-of select="15"/>
                         </xsl:attribute>
                         <xsl:value-of select="./AvgScore"/>
                     </xsl:element>
@@ -335,34 +370,28 @@
     </xsl:template>
 
     <xsl:template name="Buttons">
-        <a xlink:href="biblioteka_output.pdf" target="_blank">
+        <a xlink:href="PDF.pdf" target="_blank">
             <svg:g class="button" cursor="pointer">
-                <svg:rect x="15" y="90" width="100" height="60" fill="#C4C4C4" stroke="black"/>
-                <svg:text x="38" y="115" fill="white" font-size="16">Raport</svg:text>
-                <svg:text x="38" y="135" fill="white" font-size="16">PDF</svg:text>
+                <svg:rect x="15" y="90" width="100" height="60" fill="crimson" stroke="black" stroke-opacity="0.5"/>
+                <svg:text x="38" y="115" fill="white" font-size="14">Wersja</svg:text>
+                <svg:text x="38" y="135" fill="white" font-size="14">PDF</svg:text>
             </svg:g>
         </a>
 
-        <a xlink:href="biblioteka_output.xml" target="_blank">
+        <a xlink:href="XMLGenerated.xml" target="_blank">
             <svg:g class="button" cursor="pointer">
-                <svg:rect x="15" y="240" width="100" height="60" fill="#C4C4C4" stroke="black"/>
-                <svg:text x="38" y="265" fill="white" font-size="16">Raport</svg:text>
-                <svg:text x="38" y="285" fill="white" font-size="16">XML</svg:text>
+                <svg:rect x="15" y="165" width="100" height="60" fill="crimson" stroke="black" stroke-opacity="0.5"/>
+                <svg:text x="38" y="185" fill="white" font-size="14">Wersja</svg:text>
+                <svg:text x="38" y="205" fill="white" font-size="14">XML</svg:text>
             </svg:g>
         </a>
 
-        <a xlink:href="biblioteka_output.txt" target="_blank">
+        <a xlink:href="TXTGenerated.txt" target="_blank">
             <svg:g class="button" cursor="pointer">
-                <svg:rect x="15" y="315" width="100" height="60" fill="#C4C4C4" stroke="black"/>
-                <svg:text x="38" y="335" fill="white" font-size="16">Raport</svg:text>
-                <svg:text x="38" y="355" fill="white" font-size="16">TXT</svg:text>
+                <svg:rect x="15" y="240" width="100" height="60" fill="crimson" stroke="black" stroke-opacity="0.5"/>
+                <svg:text x="38" y="260" fill="white" font-size="14">Wersja</svg:text>
+                <svg:text x="38" y="280" fill="white" font-size="14">TXT</svg:text>
             </svg:g>
         </a>
     </xsl:template>
-
-    <!--<xsl:template match="ZrealizowaneUsługi"/>-->
-    <!--<xsl:template match="IlośćCzytelników"/>-->
-    <!--<xsl:template match="Obrót"/>-->
-    <!--<xsl:template match="DataWygenerowania"/>-->
-
 </xsl:stylesheet>

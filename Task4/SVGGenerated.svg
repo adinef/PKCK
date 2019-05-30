@@ -1,0 +1,534 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg:svg
+  PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg:svg xmlns:svg="http://www.w3.org/2000/svg"
+         xmlns="http://www.w3.org/2000/svg"
+         xmlns:xlink="http://www.w3.org/1999/xlink"
+         width="1280"
+         height="920"
+         font-family="Verdana">
+   <svg:desc>Biblioteka filmów, dane</svg:desc>
+   <svg:title>Raport, biblioteka filmów</svg:title>
+   <svg:defs>
+      <svg:linearGradient id="gradient">
+         <svg:stop offset="0%" style="stop-color: white;"/>
+         <svg:stop offset="28%" style="stop-color: gray;"/>
+         <svg:stop offset="80%" style="stop-color: gray;"/>
+         <svg:stop offset="100%" style="stop-color: white;"/>
+      </svg:linearGradient>
+   </svg:defs>
+   <svg:rect x="0"
+             y="0"
+             width="1280"
+             height="920"
+             fill="url(#gradient)"
+             stroke="crimson"
+             stroke-width="2"
+             stroke-opacity="0.2"/>
+   <svg:text x="430"
+             y="55"
+             font-size="28"
+             fill="white"
+             stroke="black"
+             stroke-width="1"
+             font-weight="bold"
+             text-anchor="middle">
+                Filmy (raport)
+            </svg:text>
+   <a xlink:href="PDF.pdf" target="_blank">
+      <svg:g class="button" cursor="pointer">
+         <svg:rect x="15"
+                   y="90"
+                   width="100"
+                   height="60"
+                   fill="crimson"
+                   stroke="black"
+                   stroke-opacity="0.5"/>
+         <svg:text x="38" y="115" fill="white" font-size="14">Wersja</svg:text>
+         <svg:text x="38" y="135" fill="white" font-size="14">PDF</svg:text>
+      </svg:g>
+   </a>
+   <a xlink:href="XMLGenerated.xml" target="_blank">
+      <svg:g class="button" cursor="pointer">
+         <svg:rect x="15"
+                   y="165"
+                   width="100"
+                   height="60"
+                   fill="crimson"
+                   stroke="black"
+                   stroke-opacity="0.5"/>
+         <svg:text x="38" y="185" fill="white" font-size="14">Wersja</svg:text>
+         <svg:text x="38" y="205" fill="white" font-size="14">XML</svg:text>
+      </svg:g>
+   </a>
+   <a xlink:href="TXTGenerated.txt" target="_blank">
+      <svg:g class="button" cursor="pointer">
+         <svg:rect x="15"
+                   y="240"
+                   width="100"
+                   height="60"
+                   fill="crimson"
+                   stroke="black"
+                   stroke-opacity="0.5"/>
+         <svg:text x="38" y="260" fill="white" font-size="14">Wersja</svg:text>
+         <svg:text x="38" y="280" fill="white" font-size="14">TXT</svg:text>
+      </svg:g>
+   </a>
+   <svg:g id="autor_dane">
+      <svg:text x="600"
+                y="850"
+                font-size="16"
+                fill="black"
+                text-anchor="middle"
+                class="author">, </svg:text>
+   </svg:g>
+   <style>
+                g.button:hover {
+                fill: #FFFFEE;
+                }
+
+                .bar, .bar_act, .text_over_crimson {
+                fill: #aaa;
+                height: 21px;
+                transition: fill .3s ease;
+                cursor: pointer;
+                font-family: Helvetica, sans-serif;
+
+                text {
+                fill: #555;
+                }
+                }
+
+                .chart:hover,
+                .chart:focus {
+                .bar {
+                fill: #aaa;
+                }
+                }
+
+                .bar:hover,
+                .bar:focus {
+                fill: red !important;
+
+                text {
+                fill: red;
+                }
+                }
+
+                .bar_act:hover,
+                .bar_act:focus {
+                fill: blue !important;
+
+                text {
+                fill: red;
+                }
+                }
+
+                figcaption {
+                font-weight: bold;
+                color: #000;
+                margin-bottom: 20px;
+                }
+
+                body {
+                font-family: 'Open Sans', sans-serif;
+                }
+
+                author {
+                background: rgba(0, 0, 0, 0.7);
+                }
+
+                .text_over_crimson:hover {
+                fill: orange !important;
+                }
+
+                .score {
+                    display: block;
+                    fill: white;
+                }
+
+            </style>
+   <script type="text/javascript">
+                
+                var tab = new Array(50);
+                for (let i = 0; i &lt; 50; i++) {
+                    tab[i] = true;
+                }
+
+                function toggleScore(i, element) {
+                eById = document.getElementsByClassName(element);
+                console.log(eById);
+                console.log(tab[i]);
+                if (tab[i]) {
+                fadeOut(eById[0]);
+                fadeOut(eById[1]);
+                tab[i] = false;
+                } else {
+                fadeIn(eById[0]);
+                fadeIn(eById[1]);
+                tab[i] = true;
+                }
+                }
+
+                function fadeIn(element) {
+                var op = 1; // initial opacity
+                var timer = setInterval(function () {
+                if (op &lt;= 0.1){
+                clearInterval(timer);
+                element.style.display = 'none';
+                }
+                element.style.opacity = op;
+                element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+                op -= op * 0.1;
+                }, 50);
+                }
+
+                function fadeOut(element) {
+                var op = 0.1; // initial opacity
+                element.style.display = 'block';
+                var timer = setInterval(function () {
+                if (op &gt;= 1){
+                clearInterval(timer);
+                }
+                element.style.opacity = op;
+                element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+                op += op * 0.1;
+                }, 10);
+                }
+                
+            </script>
+   09/05/2019
+   <svg:g id="autor_dane">
+      <svg:text x="600"
+                y="850"
+                font-size="16"
+                fill="black"
+                text-anchor="middle"
+                class="author">Adrian Fijałkowski, 210171@edu.p.lodz.pl</svg:text>
+   </svg:g>
+   <svg:g id="rect">
+      <svg:text font-weight="bold"
+                font-size="16"
+                text-anchor="middle"
+                x="420"
+                y="110">Kategorie z kardynalnością</svg:text>
+      <svg:g class="bar">
+         <svg:rect width="20" height="19" y="135" x="320"/>
+         <svg:text x="347" dy=".35em" y="145">2 - Horror</svg:text>
+      </svg:g>
+      <svg:g class="bar">
+         <svg:rect width="100" height="19" y="160" x="320"/>
+         <svg:text x="435" dy=".35em" y="170">10 - Dramat</svg:text>
+      </svg:g>
+      <svg:g class="bar">
+         <svg:rect width="10" height="19" y="185" x="320"/>
+         <svg:text x="336" dy=".35em" y="195">1 - Wojenny</svg:text>
+      </svg:g>
+      <svg:g class="bar">
+         <svg:rect width="40" height="19" y="210" x="320"/>
+         <svg:text x="369" dy=".35em" y="220">4 - Akcja</svg:text>
+      </svg:g>
+      <svg:g class="bar">
+         <svg:rect width="20" height="19" y="235" x="320"/>
+         <svg:text x="347" dy=".35em" y="245">2 - Sci-Fi</svg:text>
+      </svg:g>
+      <svg:g class="bar">
+         <svg:rect width="70" height="19" y="260" x="320"/>
+         <svg:text x="402" dy=".35em" y="270">7 - Komedia</svg:text>
+      </svg:g>
+      <svg:g class="bar">
+         <svg:rect width="20" height="19" y="285" x="320"/>
+         <svg:text x="347" dy=".35em" y="295">2 - Przygodowy</svg:text>
+      </svg:g>
+      <svg:g class="bar">
+         <svg:rect width="20" height="19" y="310" x="320"/>
+         <svg:text x="347" dy=".35em" y="320">2 - Kryminalny</svg:text>
+      </svg:g>
+      <svg:g class="bar">
+         <svg:rect width="10" height="19" y="335" x="320"/>
+         <svg:text x="336" dy=".35em" y="345">1 - Fantasy</svg:text>
+      </svg:g>
+   </svg:g>
+   <svg:g id="rect">
+      <svg:text font-weight="bold"
+                font-size="16"
+                text-anchor="middle"
+                x="420"
+                y="400">Aktorzy wraz z ilością zagranych roli</svg:text>
+      <svg:g class="bar_act">
+         <svg:rect width="40" height="19" y="425" x="320"/>
+         <svg:text x="369" dy=".35em" y="435">4 - Jack Nicholson</svg:text>
+      </svg:g>
+      <svg:g class="bar_act">
+         <svg:rect width="10" height="19" y="450" x="320"/>
+         <svg:text x="336" dy=".35em" y="460">1 - Emile Hirsch</svg:text>
+      </svg:g>
+      <svg:g class="bar_act">
+         <svg:rect width="10" height="19" y="475" x="320"/>
+         <svg:text x="336" dy=".35em" y="485">1 - Martin Sheen</svg:text>
+      </svg:g>
+      <svg:g class="bar_act">
+         <svg:rect width="10" height="19" y="500" x="320"/>
+         <svg:text x="336" dy=".35em" y="510">1 - Brie Larson</svg:text>
+      </svg:g>
+      <svg:g class="bar_act">
+         <svg:rect width="10" height="19" y="525" x="320"/>
+         <svg:text x="336" dy=".35em" y="535">1 - Tom Hanks</svg:text>
+      </svg:g>
+      <svg:g class="bar_act">
+         <svg:rect width="10" height="19" y="550" x="320"/>
+         <svg:text x="336" dy=".35em" y="560">1 - Norman Reedus</svg:text>
+      </svg:g>
+      <svg:g class="bar_act">
+         <svg:rect width="10" height="19" y="575" x="320"/>
+         <svg:text x="336" dy=".35em" y="585">1 - Marek Kondrat</svg:text>
+      </svg:g>
+      <svg:g class="bar_act">
+         <svg:rect width="10" height="19" y="600" x="320"/>
+         <svg:text x="336" dy=".35em" y="610">1 - Bryan Cranston</svg:text>
+      </svg:g>
+      <svg:g class="bar_act">
+         <svg:rect width="10" height="19" y="625" x="320"/>
+         <svg:text x="336" dy=".35em" y="635">1 - Daniel Day-Lewis</svg:text>
+      </svg:g>
+      <svg:g class="bar_act">
+         <svg:rect width="10" height="19" y="650" x="320"/>
+         <svg:text x="336" dy=".35em" y="660">1 - Billy Cristal Sheen</svg:text>
+      </svg:g>
+      <svg:g class="bar_act">
+         <svg:rect width="10" height="19" y="675" x="320"/>
+         <svg:text x="336" dy=".35em" y="685">1 - Meg Ryan</svg:text>
+      </svg:g>
+      <svg:g class="bar_act">
+         <svg:rect width="10" height="19" y="700" x="320"/>
+         <svg:text x="336" dy=".35em" y="710">1 - Gerard Butler</svg:text>
+      </svg:g>
+      <svg:g class="bar_act">
+         <svg:rect width="10" height="19" y="725" x="320"/>
+         <svg:text x="336" dy=".35em" y="735">1 - Hugh Jackman</svg:text>
+      </svg:g>
+      <svg:g class="bar_act">
+         <svg:rect width="10" height="19" y="750" x="320"/>
+         <svg:text x="336" dy=".35em" y="760">1 - Brad Pitt</svg:text>
+      </svg:g>
+      <svg:g class="bar_act">
+         <svg:rect width="10" height="19" y="775" x="320"/>
+         <svg:text x="336" dy=".35em" y="785">1 - Eddie Redmayne</svg:text>
+      </svg:g>
+      <svg:g class="bar_act">
+         <svg:rect width="10" height="19" y="800" x="320"/>
+         <svg:text x="336" dy=".35em" y="810">1 - Andrzej Chyra</svg:text>
+      </svg:g>
+      <svg:g class="bar_act">
+         <svg:rect width="10" height="19" y="825" x="320"/>
+         <svg:text x="336" dy=".35em" y="835">1 - Ryan Gosling</svg:text>
+      </svg:g>
+   </svg:g>
+   <svg:g id="rect">
+      <svg:text font-weight="bold"
+                font-size="16"
+                text-anchor="middle"
+                x="770"
+                y="110">Wszystkie filmy, z ocenami</svg:text>
+      <svg:g class="text_over_crimson">
+         <svg:text x="650" dy=".35em" y="155" onclick="toggleScore(1, &#34;mv1&#34;)">Lśnienie</svg:text>
+         <svg:rect style="opacity: 0; fill: red;"
+                   class="mv1 score"
+                   x="1105"
+                   y="145"
+                   width="30"
+                   height="20"/>
+         <svg:text style="opacity: 0;" class="mv1" x="1110" y="145" dy="15">8.2</svg:text>
+      </svg:g>
+      <svg:g class="text_over_crimson">
+         <svg:text x="650" dy=".35em" y="190" onclick="toggleScore(2, &#34;mv2&#34;)">Wszystko za życie</svg:text>
+         <svg:rect style="opacity: 0; fill: red;"
+                   class="mv2 score"
+                   x="1105"
+                   y="180"
+                   width="30"
+                   height="20"/>
+         <svg:text style="opacity: 0;" class="mv2" x="1110" y="180" dy="15">8.0</svg:text>
+      </svg:g>
+      <svg:g class="text_over_crimson">
+         <svg:text x="650" dy=".35em" y="225" onclick="toggleScore(3, &#34;mv3&#34;)">Czas apokalipsy</svg:text>
+         <svg:rect style="opacity: 0; fill: red;"
+                   class="mv3 score"
+                   x="1105"
+                   y="215"
+                   width="30"
+                   height="20"/>
+         <svg:text style="opacity: 0;" class="mv3" x="1110" y="215" dy="15">8.5</svg:text>
+      </svg:g>
+      <svg:g class="text_over_crimson">
+         <svg:text x="650" dy=".35em" y="260" onclick="toggleScore(4, &#34;mv4&#34;)">Kapitan Marvel</svg:text>
+         <svg:rect style="opacity: 0; fill: red;"
+                   class="mv4 score"
+                   x="1105"
+                   y="250"
+                   width="30"
+                   height="20"/>
+         <svg:text style="opacity: 0;" class="mv4" x="1110" y="250" dy="15">7.2</svg:text>
+      </svg:g>
+      <svg:g class="text_over_crimson">
+         <svg:text x="650" dy=".35em" y="295" onclick="toggleScore(5, &#34;mv5&#34;)">Filadelfia</svg:text>
+         <svg:rect style="opacity: 0; fill: red;"
+                   class="mv5 score"
+                   x="1105"
+                   y="285"
+                   width="30"
+                   height="20"/>
+         <svg:text style="opacity: 0;" class="mv5" x="1110" y="285" dy="15">8.2</svg:text>
+      </svg:g>
+      <svg:g class="text_over_crimson">
+         <svg:text x="650" dy=".35em" y="330" onclick="toggleScore(6, &#34;mv6&#34;)">Święci z Bostonu</svg:text>
+         <svg:rect style="opacity: 0; fill: red;"
+                   class="mv6 score"
+                   x="1105"
+                   y="320"
+                   width="30"
+                   height="20"/>
+         <svg:text style="opacity: 0;" class="mv6" x="1110" y="320" dy="15">7.5</svg:text>
+      </svg:g>
+      <svg:g class="text_over_crimson">
+         <svg:text x="650" dy=".35em" y="365" onclick="toggleScore(7, &#34;mv7&#34;)">Dzień świra</svg:text>
+         <svg:rect style="opacity: 0; fill: red;"
+                   class="mv7 score"
+                   x="1105"
+                   y="355"
+                   width="30"
+                   height="20"/>
+         <svg:text style="opacity: 0;" class="mv7" x="1110" y="355" dy="15">8.1</svg:text>
+      </svg:g>
+      <svg:g class="text_over_crimson">
+         <svg:text x="650" dy=".35em" y="400" onclick="toggleScore(8, &#34;mv8&#34;)">Wyspa psów</svg:text>
+         <svg:rect style="opacity: 0; fill: red;"
+                   class="mv8 score"
+                   x="1105"
+                   y="390"
+                   width="30"
+                   height="20"/>
+         <svg:text style="opacity: 0;" class="mv8" x="1110" y="390" dy="15">7.2</svg:text>
+      </svg:g>
+      <svg:g class="text_over_crimson">
+         <svg:text x="650" dy=".35em" y="435" onclick="toggleScore(9, &#34;mv9&#34;)">Ostatni Mohikanin</svg:text>
+         <svg:rect style="opacity: 0; fill: red;"
+                   class="mv9 score"
+                   x="1105"
+                   y="425"
+                   width="30"
+                   height="20"/>
+         <svg:text style="opacity: 0;" class="mv9" x="1110" y="425" dy="15">7.9</svg:text>
+      </svg:g>
+      <svg:g class="text_over_crimson">
+         <svg:text x="650" dy=".35em" y="470" onclick="toggleScore(10, &#34;mv10&#34;)">Lepiej być nie może</svg:text>
+         <svg:rect style="opacity: 0; fill: red;"
+                   class="mv10 score"
+                   x="1105"
+                   y="460"
+                   width="30"
+                   height="20"/>
+         <svg:text style="opacity: 0;" class="mv10" x="1110" y="460" dy="15">7.6</svg:text>
+      </svg:g>
+      <svg:g class="text_over_crimson">
+         <svg:text x="650" dy=".35em" y="505" onclick="toggleScore(11, &#34;mv11&#34;)">Lot nad kukułczym gniazdem</svg:text>
+         <svg:rect style="opacity: 0; fill: red;"
+                   class="mv11 score"
+                   x="1105"
+                   y="495"
+                   width="30"
+                   height="20"/>
+         <svg:text style="opacity: 0;" class="mv11" x="1110" y="495" dy="15">8.3</svg:text>
+      </svg:g>
+      <svg:g class="text_over_crimson">
+         <svg:text x="650" dy=".35em" y="540" onclick="toggleScore(12, &#34;mv12&#34;)">Choć goni nas czas</svg:text>
+         <svg:rect style="opacity: 0; fill: red;"
+                   class="mv12 score"
+                   x="1105"
+                   y="530"
+                   width="30"
+                   height="20"/>
+         <svg:text style="opacity: 0;" class="mv12" x="1110" y="530" dy="15">7.5</svg:text>
+      </svg:g>
+      <svg:g class="text_over_crimson">
+         <svg:text x="650" dy=".35em" y="575" onclick="toggleScore(13, &#34;mv13&#34;)">Kiedy Harry poznał Sally</svg:text>
+         <svg:rect style="opacity: 0; fill: red;"
+                   class="mv13 score"
+                   x="1105"
+                   y="565"
+                   width="30"
+                   height="20"/>
+         <svg:text style="opacity: 0;" class="mv13" x="1110" y="565" dy="15">7.4</svg:text>
+      </svg:g>
+      <svg:g class="text_over_crimson">
+         <svg:text x="650" dy=".35em" y="610" onclick="toggleScore(14, &#34;mv14&#34;)">Słodka zemsta</svg:text>
+         <svg:rect style="opacity: 0; fill: red;"
+                   class="mv14 score"
+                   x="1105"
+                   y="600"
+                   width="30"
+                   height="20"/>
+         <svg:text style="opacity: 0;" class="mv14" x="1110" y="600" dy="15">6.0</svg:text>
+      </svg:g>
+      <svg:g class="text_over_crimson">
+         <svg:text x="650" dy=".35em" y="645" onclick="toggleScore(15, &#34;mv15&#34;)">Rock'N'Rolla</svg:text>
+         <svg:rect style="opacity: 0; fill: red;"
+                   class="mv15 score"
+                   x="1105"
+                   y="635"
+                   width="30"
+                   height="20"/>
+         <svg:text style="opacity: 0;" class="mv15" x="1110" y="635" dy="15">7.2</svg:text>
+      </svg:g>
+      <svg:g class="text_over_crimson">
+         <svg:text x="650" dy=".35em" y="680" onclick="toggleScore(16, &#34;mv16&#34;)">Les Misérables: Nędznicy</svg:text>
+         <svg:rect style="opacity: 0; fill: red;"
+                   class="mv16 score"
+                   x="1105"
+                   y="670"
+                   width="30"
+                   height="20"/>
+         <svg:text style="opacity: 0;" class="mv16" x="1110" y="670" dy="15">8.0</svg:text>
+      </svg:g>
+      <svg:g class="text_over_crimson">
+         <svg:text x="650" dy=".35em" y="715" onclick="toggleScore(17, &#34;mv17&#34;)">Przekręt</svg:text>
+         <svg:rect style="opacity: 0; fill: red;"
+                   class="mv17 score"
+                   x="1105"
+                   y="705"
+                   width="30"
+                   height="20"/>
+         <svg:text style="opacity: 0;" class="mv17" x="1110" y="705" dy="15">7.8</svg:text>
+      </svg:g>
+      <svg:g class="text_over_crimson">
+         <svg:text x="650" dy=".35em" y="750" onclick="toggleScore(18, &#34;mv18&#34;)">Fantastyczne zwierzęta i jak je znaleźć</svg:text>
+         <svg:rect style="opacity: 0; fill: red;"
+                   class="mv18 score"
+                   x="1105"
+                   y="740"
+                   width="30"
+                   height="20"/>
+         <svg:text style="opacity: 0;" class="mv18" x="1110" y="740" dy="15">7.2</svg:text>
+      </svg:g>
+      <svg:g class="text_over_crimson">
+         <svg:text x="650" dy=".35em" y="785" onclick="toggleScore(19, &#34;mv19&#34;)">Komornik</svg:text>
+         <svg:rect style="opacity: 0; fill: red;"
+                   class="mv19 score"
+                   x="1105"
+                   y="775"
+                   width="30"
+                   height="20"/>
+         <svg:text style="opacity: 0;" class="mv19" x="1110" y="775" dy="15">7.5</svg:text>
+      </svg:g>
+      <svg:g class="text_over_crimson">
+         <svg:text x="650" dy=".35em" y="820" onclick="toggleScore(20, &#34;mv20&#34;)">Drive</svg:text>
+         <svg:rect style="opacity: 0; fill: red;"
+                   class="mv20 score"
+                   x="1105"
+                   y="810"
+                   width="30"
+                   height="20"/>
+         <svg:text style="opacity: 0;" class="mv20" x="1110" y="810" dy="15">8.0</svg:text>
+      </svg:g>
+   </svg:g>
+</svg:svg>
