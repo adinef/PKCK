@@ -1,0 +1,25 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<VBox fx:controller="pl.lodz.p.it.pkck.Controller"
+      xmlns:fx="http://javafx.com/fxml">
+        <MenuBar>
+            <Menu text="Plik">
+                <MenuItem onAction="#loadFile" text="Wczytaj plik">
+                </MenuItem>
+                <MenuItem onAction="#newFile" text="Utwórz nowy plik">
+                </MenuItem>
+                <MenuItem fx:id="saveItem" onAction="#saveFile" text="Zapisz" disable="true">
+                </MenuItem>
+            </Menu>
+        </MenuBar>
+        <TabPane fx:id="tabPane">
+            <Tab fx:id="mainTab" closable="false" text="Opcje" disable="true">
+                <VBox fx:id="mainTabBox">
+                    <ToolBar>
+                        <Button text="Nowa kategoria"/>
+                        <Button text="Nowy film"/>
+                    </ToolBar>
+                </VBox>
+            </Tab>
+        </TabPane>
+</VBox>
