@@ -1,6 +1,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.VBox?>
-<VBox fx:controller="pl.lodz.p.it.pkck.Controller"
+<VBox fx:controller="pl.lodz.p.it.pkck.view.Controller"
       xmlns:fx="http://javafx.com/fxml">
         <MenuBar>
             <Menu text="Plik">
