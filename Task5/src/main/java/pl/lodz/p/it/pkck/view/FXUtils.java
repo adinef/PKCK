@@ -1,10 +1,17 @@
 package pl.lodz.p.it.pkck.view;
 
+import com.jfoenix.animation.alert.JFXAlertAnimation;
+import com.jfoenix.controls.JFXAlert;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDatePicker;
+import com.jfoenix.controls.JFXDialogLayout;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.stage.FileChooser;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import pl.lodz.p.it.pkck.Main;
 import pl.lodz.p.it.pkck.XML.IdGenerator;
 import pl.lodz.p.it.pkck.XML.model.Actor;
@@ -15,20 +22,29 @@ import pl.lodz.p.it.pkck.view.common.FunctionWithException;
 
 import java.io.File;
 import java.util.List;
+import java.util.Optional;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.function.Supplier;
 
 public class FXUtils {
 
-    public static <T> T openAndReadXml(FunctionWithException<File, T> fileHandler) throws Exception {
+    @Getter
+    @AllArgsConstructor
+    public static class ElemFileTuple<T> {
+        T elem;
+        File file;
+    }
+
+    public static <T> Optional<ElemFileTuple<T>> openAndReadXml(FunctionWithException<File, T> fileHandler) throws Exception {
         FileChooser fileChooser = new FileChooser();
         fileChooser.setTitle("Wybierz plik");
         fileChooser.setInitialDirectory(new File("."));
         fileChooser.setSelectedExtensionFilter(new FileChooser.ExtensionFilter("Plik .xml", "xml"));
         File file = fileChooser.showOpenDialog(Main.getMainStage());
         if (file != null) {
-            return fileHandler.apply(file);
+            return Optional.of(new ElemFileTuple<>(fileHandler.apply(file), file));
         }
-        return null;
+        return Optional.empty();
     }
 
     public static void editMenuFor(Object object) {
@@ -181,5 +197,50 @@ public class FXUtils {
                 datePicker);
         editViewTriplet.layout.setActions(saveButton, cancelButton);
         editViewTriplet.alert.showAndWait();
+    }
+
+    public static void noDataPopup(String label, String body) {
+        JFXAlert alert = new JFXAlert((Stage) Main.getMainStage());
+        JFXDialogLayout layout = new JFXDialogLayout();
+        JFXButton closeButton = new JFXButton("Zamknij");
+        closeButton.setButtonType(JFXButton.ButtonType.FLAT);
+        closeButton.setOnAction(event -> alert.hideWithAnimation());
+        layout.setHeading(new Label(label));
+        layout.setBody(new Label(body));
+        layout.setActions(closeButton);
+        alert.setAnimation(JFXAlertAnimation.CENTER_ANIMATION);
+        alert.initModality(Modality.WINDOW_MODAL);
+        alert.setOverlayClose(true);
+        alert.setContent(layout);
+        alert.showAndWait();
+    }
+
+    public static boolean yesOrNoPopup(String label, String body) {
+        AtomicBoolean atomicBoolean = new AtomicBoolean(false);
+        JFXAlert alert = new JFXAlert((Stage) Main.getMainStage());
+        JFXDialogLayout layout = new JFXDialogLayout();
+        JFXButton noButton = new JFXButton("Nie");
+        JFXButton yesButton = new JFXButton("Tak");
+        yesButton.setDefaultButton(true);
+        yesButton.setButtonType(JFXButton.ButtonType.RAISED);
+        noButton.setButtonType(JFXButton.ButtonType.FLAT);
+        yesButton.setOnAction(event -> {
+            atomicBoolean.set(true);
+            alert.hideWithAnimation();
+            event.consume();
+        });
+        noButton.setOnAction(event -> {
+            alert.hideWithAnimation();
+            event.consume();
+        });
+        layout.setHeading(new Label(label));
+        layout.setBody(new Label(body));
+        layout.setActions(yesButton, noButton);
+        alert.setAnimation(JFXAlertAnimation.CENTER_ANIMATION);
+        alert.initModality(Modality.WINDOW_MODAL);
+        alert.setOverlayClose(true);
+        alert.setContent(layout);
+        alert.showAndWait();
+        return atomicBoolean.get();
     }
 }

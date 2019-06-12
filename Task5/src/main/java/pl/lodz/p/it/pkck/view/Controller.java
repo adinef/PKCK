@@ -2,15 +2,15 @@ package pl.lodz.p.it.pkck.view;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.geometry.Orientation;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.input.KeyCode;
 import javafx.scene.layout.VBox;
 import pl.lodz.p.it.pkck.XML.TableName;
 import pl.lodz.p.it.pkck.XML.model.*;
 import pl.lodz.p.it.pkck.XML.parsing.FilmDatabaseDataMapper;
 import pl.lodz.p.it.pkck.events.RunActionEventHolder;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -21,11 +21,13 @@ public class Controller {
     public MenuItem saveItem;
     FilmDatabaseDataMapper filmDatabaseDataMapper = new FilmDatabaseDataMapper();
     FilmDatabase currentDatabase = null;
+    private File databaseFile;
     RunActionEventHolder runActionEventHolder = new RunActionEventHolder();
 
     /******************** CLASS -> FILM DB SUPPLIER ************************************/
     private Map<Class, Function<FilmDatabase, List>> suppliers = new HashMap<>();
     /***********************************************************************************/
+
     /******************** CLASS -> TABLE VIEW (EDIT)************************************/
     private Map<Class, TableView> tableViews = new HashMap<>();
     /***********************************************************************************/
@@ -46,9 +48,16 @@ public class Controller {
     @SuppressWarnings("unchecked")
     private void loadFile() throws Exception {
         runActionEventHolder.start("beforeLoad");
-        this.currentDatabase = FXUtils.openAndReadXml(filmDatabaseDataMapper::readData);
-        this.createTabsForCollectionsOf(this.currentDatabase);
-        runActionEventHolder.start("loadedData");
+        FXUtils
+                .openAndReadXml(filmDatabaseDataMapper::readData)
+                .ifPresent(
+                        (e) -> {
+                            this.currentDatabase = e.getElem();
+                            this.databaseFile = e.getFile();
+                            this.createTabsForCollectionsOf(this.currentDatabase);
+                            runActionEventHolder.start("loadedData");
+                        }
+                );
     }
 
     private void createTabsForCollectionsOf(FilmDatabase currentDatabase) {
@@ -74,6 +83,16 @@ public class Controller {
                     }
             );
 
+            tabl.setOnMouseClicked(
+                    (e) -> {
+                        if (e.getClickCount() == 2) {
+                            this.edit(tabl.getSelectionModel().getSelectedItem());
+                            reloadContent(supplierPair, tabl);
+                            e.consume();
+                        }
+                    }
+            );
+
             newItem.setOnAction(
                     (e) -> {
                         this.newElem(supplierPair.getKey(), supplierPair.getValue().apply(this.currentDatabase));
@@ -84,9 +103,19 @@ public class Controller {
 
             deleteItem.setOnAction(
                     (e) -> {
-                        supplierPair.getValue().apply(currentDatabase).remove(tabl.getSelectionModel().getSelectedItem());
+                        this.deleteElementFromList(tabl.getSelectionModel().getSelectedItem(), supplierPair.getValue());
                         reloadContent(supplierPair, tabl);
                         e.consume();
+                    }
+            );
+
+            tabl.setOnKeyPressed(
+                    (e) -> {
+                        if (e.getCode().equals(KeyCode.DELETE)) {
+                            this.deleteElementFromList(tabl.getSelectionModel().getSelectedItem(), supplierPair.getValue());
+                            reloadContent(supplierPair, tabl);
+                            e.consume();
+                        }
                     }
             );
 
@@ -109,12 +138,18 @@ public class Controller {
         }
     }
 
+    private void deleteElementFromList(Object selectedItem, Function<FilmDatabase, List> value) {
+        if (FXUtils.yesOrNoPopup("Delete", "Are you sure you want to delete the element?")) {
+            value.apply(currentDatabase).remove(selectedItem);
+        }
+    }
+
     private void reloadContent(Map.Entry<Class, Function<FilmDatabase, List>> supplierPair,
                                TableView tabl) {
         int selectedIndex = tabl.getSelectionModel().getSelectedIndex();
         tabl.getItems().clear();
         tabl.getItems().addAll(supplierPair.getValue().apply(currentDatabase));
-        tabl.getSelectionModel().focus(selectedIndex);
+        tabl.getSelectionModel().select(selectedIndex);
     }
 
     private void edit(Object obj) {
@@ -147,6 +182,21 @@ public class Controller {
         this.tableViews.clear();
     }
 
-    public void saveFile(ActionEvent actionEvent) {
+    @FXML
+    private void saveFile() {
+        try {
+            this.filmDatabaseDataMapper.saveData(
+                    this.currentDatabase,
+                    this.databaseFile,
+                    FilmDatabase.class,
+                    Actor.class,
+                    Director.class,
+                    Film.class,
+                    Category.class
+            );
+        } catch (Exception e) {
+            FXUtils.noDataPopup("Błąd", "Wystąpił błąd przy zapisie. " + e.getMessage());
+            e.printStackTrace();
+        }
     }
 }

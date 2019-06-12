@@ -3,8 +3,11 @@ package pl.lodz.p.it.pkck.view;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXChipView;
 import com.jfoenix.controls.JFXComboBox;
+import javafx.scene.Node;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.HBox;
 import javafx.util.StringConverter;
 import pl.lodz.p.it.pkck.XML.IdGenerator;
 import pl.lodz.p.it.pkck.XML.model.*;
@@ -14,9 +17,11 @@ import java.util.function.Supplier;
 
 public class FilmEditUtils {
 
+    private final static String DIGIT_PATTERN = "\\d*";
+    private final static String SCORE_PATTERN = "[0-9] || (10)";
 
     public static void addFilmMenu(FilmDatabase filmDatabase) {
-        modifyFilmMenu(() -> filmDatabase.getFilms(), filmDatabase, "Edit film ");
+        modifyFilmMenu(filmDatabase::getFilms, filmDatabase, "Edit film ");
     }
 
     public static void editFilmMenu(Film film, FilmDatabase filmDatabase) {
@@ -37,7 +42,7 @@ public class FilmEditUtils {
             throw new RuntimeException("WRONG INPUT DATA");
         }
 
-        EditViewTriplet editViewTriplet = new EditViewTriplet(caption + film.getFilmId(), 700);
+        EditViewTriplet editViewTriplet = new EditViewTriplet(caption + film.getFilmId(), 450);
 
         // NAME
         Label nameLabel = new Label("Name");
@@ -48,16 +53,33 @@ public class FilmEditUtils {
         TextField avgScoreTextField = new TextField(
                 (film.getAvgScore() != null? film.getAvgScore().toString() : "")
         );
+        avgScoreTextField.textProperty().addListener(
+                (o, oV, nV) -> {
+                    if (!nV.matches(SCORE_PATTERN)) {
+                        avgScoreTextField.setText(oV);
+                    }
+                }
+        );
 
         // RELEASE YEAR
         Label releaseYearLabel = new Label("Release year");
         TextField releaseYearTextField = new TextField(
                 (film.getReleaseYear() != null? film.getReleaseYear().toString() : "")
         );
+        releaseYearTextField.textProperty().addListener(
+                (o, oV, nV) -> {
+                    if (!nV.matches(DIGIT_PATTERN)) {
+                        releaseYearTextField.setText(oV);
+                    }
+                }
+        );
 
         // DESCRIPTION
         Label descriptionLabel = new Label("Description");
-        TextField descriptionTextField = new TextField(film.getDescription());
+        TextArea descriptionTextField = new TextArea(film.getDescription());
+        descriptionTextField.setWrapText(true);
+        descriptionTextField.setPrefRowCount(5);
+
 
         // LEAD
         Label actorLabel = new Label("Lead actor");
@@ -91,16 +113,16 @@ public class FilmEditUtils {
                     }
 
                     @Override
-                    public Category fromString(String s) {
+                    public Category fromString(String catName) {
                         Category category = null;
                         for (Category knownCat : filmDatabase.getCategories()) {
-                            if (knownCat.getName().equals(s)) {
+                            if (knownCat.getName().equals(catName)) {
                                 category = knownCat;
                                 break;
                             }
                         }
                         if (category == null) {
-                            category = createNewCategory(s, filmDatabase.getCategories());
+                            category = createNewCategory(catName, filmDatabase.getCategories());
                         }
                         return category;
                     }
@@ -135,24 +157,33 @@ public class FilmEditUtils {
                     e.consume();
                 }
         );
+
+        HBox nameHbox = getHBoxWith(nameLabel, nameTextField);
+        HBox ryHBox = getHBoxWith(releaseYearLabel, releaseYearTextField);
+        HBox avgScoreHBox = getHBoxWith(avgScoreLabel, avgScoreTextField);
+        HBox actHBox = getHBoxWith(actorLabel, actorCheckbox);
+        HBox dirHBox = getHBoxWith(directorLabel, directorCheckbox);
+
         editViewTriplet.mainVBox.getChildren().addAll(
-                nameLabel,
-                nameTextField,
+                nameHbox,
                 descriptionLabel,
                 descriptionTextField,
-                releaseYearLabel,
-                releaseYearTextField,
-                avgScoreLabel,
-                avgScoreTextField,
-                actorLabel,
-                actorCheckbox,
-                directorLabel,
-                directorCheckbox,
+                ryHBox,
+                avgScoreHBox,
+                actHBox,
+                dirHBox,
                 categoriesLabel,
                 categoryChips);
 
         editViewTriplet.layout.setActions(saveButton, cancelButton);
         editViewTriplet.alert.showAndWait();
+    }
+
+    private static HBox getHBoxWith(Node... nodes) {
+        HBox hbox = new HBox();
+        hbox.setSpacing(20);
+        hbox.getChildren().addAll(nodes);
+        return hbox;
     }
 
     private static Category createNewCategory(String s, List<Category> categories) {
@@ -162,5 +193,4 @@ public class FilmEditUtils {
         categories.add(category);
         return category;
     }
-
 }

@@ -26,7 +26,7 @@ class EditViewTriplet {
         layout.setBody(mainVBox);
         alert.setAnimation(JFXAlertAnimation.CENTER_ANIMATION);
         alert.initModality(Modality.WINDOW_MODAL);
-        alert.setOverlayClose(true);
+        alert.setOverlayClose(false);
         alert.setContent(layout);
     }
 }
