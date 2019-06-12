@@ -3,20 +3,20 @@ package pl.lodz.p.it.pkck.XML.model;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
-import org.simpleframework.xml.Attribute;
 import pl.lodz.p.it.pkck.XML.TableName;
+
+import javax.xml.bind.annotation.*;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
 @ToString(callSuper = true)
 @TableName("Actors")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Actor extends Person {
 
-    @Attribute(required = false, name = "leadId")
+    @XmlID
+    @XmlAttribute(name = "id")
     private String leadId;
-
-    @Attribute(required = false, name = "leadRefId")
-    private String leadRefId;
 
     @Override
     public String toString() {

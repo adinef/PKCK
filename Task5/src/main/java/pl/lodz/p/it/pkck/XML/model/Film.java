@@ -1,47 +1,51 @@
 package pl.lodz.p.it.pkck.XML.model;
 
 import lombok.Data;
-import org.simpleframework.xml.Attribute;
-import org.simpleframework.xml.Element;
-import org.simpleframework.xml.ElementList;
 import pl.lodz.p.it.pkck.XML.TableColumnCell;
 import pl.lodz.p.it.pkck.XML.TableName;
 
+import javax.xml.bind.annotation.*;
 import java.util.List;
 
 @Data
 @TableName("Films")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Film {
 
-    @Attribute(name = "filmId", required = false)
+    @XmlID
+    @XmlAttribute(name = "id")
     private String filmId;
 
     @TableColumnCell("Name")
-    @Element(name = "Name")
+    @XmlElement(name = "Name")
     private String name;
 
     @TableColumnCell("Avg score")
-    @Element(name = "AvgScore")
+    @XmlElement(name = "AvgScore")
     private Double avgScore;
 
     @TableColumnCell("Categories")
-    @ElementList(name = "Categories", entry = "Category")
+    @XmlElementWrapper(name = "Categories")
+    @XmlElement(name = "Category")
+    @XmlIDREF
     private List<Category> categoryList;
 
     @TableColumnCell("Description")
-    @Element(name = "Description")
+    @XmlElement(name = "Description")
     private String description;
 
     @TableColumnCell("Release year")
-    @Element(name = "ReleaseYear")
+    @XmlElement(name = "ReleaseYear")
     private Integer releaseYear;
 
     @TableColumnCell("Lead")
-    @Element(name = "Lead")
+    @XmlAttribute(name = "leadId")
+    @XmlIDREF
     private Actor lead;
 
     @TableColumnCell("Director")
-    @Element(name = "Director")
+    @XmlAttribute(name = "directorId")
+    @XmlIDREF
     private Director director;
 
     @Override

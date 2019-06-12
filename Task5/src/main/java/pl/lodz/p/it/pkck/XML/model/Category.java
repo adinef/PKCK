@@ -1,23 +1,22 @@
 package pl.lodz.p.it.pkck.XML.model;
 
 import lombok.Data;
-import org.simpleframework.xml.Attribute;
-import org.simpleframework.xml.Text;
 import pl.lodz.p.it.pkck.XML.TableColumnCell;
 import pl.lodz.p.it.pkck.XML.TableName;
 
+import javax.xml.bind.annotation.*;
+
 @Data
 @TableName("Categories")
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Category {
 
-    @Attribute(name = "catId", required = false)
+    @XmlID
+    @XmlAttribute(name = "id")
     private String catId;
 
-    @Attribute(name = "catRefId", required = false)
-    private String catRefId;
-
     @TableColumnCell("Name")
-    @Text
+    @XmlValue
     private String name;
 
     @Override

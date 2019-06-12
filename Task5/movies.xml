@@ -1,727 +1,533 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-stylesheet type="text/css" href="style.css"?>
 <FilmDatabase xmlns="http://it.p.lodz.pl/pkck"
-		xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance" 
-		xsd:schemaLocation="http://it.p.lodz.pl/pkck movies.xsd">
-	<Head>
-		<Author>Adrian Fijałkowski</Author>
-		<EMail>210171@edu.p.lodz.pl</EMail>
-		<Name>Baza filmów</Name>
-	</Head>
-	<Categories>
-		<Category id="CAT01">Horror</Category>
-		<Category id="CAT02">Dramat</Category>
-		<Category id="CAT03">Wojenny</Category>
-		<Category id="CAT04">Akcja</Category>
-		<Category id="CAT05">Sci-Fi</Category>
-		<Category id="CAT06">Komedia</Category>
-		<Category id="CAT07">Przygodowy</Category>
-		<Category id="CAT08">Kryminalny</Category>
-		<Category id="CAT09">Fantasy</Category>
-	</Categories>
-	<Actors>
-		<Lead id="L01">
-			<Name>Jack</Name>
-			<LastName>Nicholson</LastName>
-			<BirthDate>1937-04-22</BirthDate>
-		</Lead>
-		<Lead id="L02">
-			<Name>Emile</Name>
-			<LastName>Hirsch</LastName>
-			<BirthDate>1985-03-13</BirthDate>
-		</Lead>
-		<Lead id="L03">
-			<Name>Martin</Name>
-			<LastName>Sheen</LastName>
-			<BirthDate>1940-08-03</BirthDate>
-		</Lead>
-		<Lead id="L04">
-			<Name>Brie</Name>
-			<LastName>Larson</LastName>
-			<BirthDate>1989-10-01</BirthDate>
-		</Lead>
-		<Lead id="L05">
-			<Name>Tom</Name>
-			<LastName>Hanks</LastName>
-			<BirthDate>1956-07-09</BirthDate>
-		</Lead>
-		<Lead id="L06">
-			<Name>Norman</Name>
-			<LastName>Reedus</LastName>
-			<BirthDate>1969-01-06</BirthDate>
-		</Lead>
-		<Lead id="L07">
-			<Name>Marek</Name>
-			<LastName>Kondrat</LastName>
-			<BirthDate>1950-10-18</BirthDate>
-		</Lead>
-		<Lead id="L08">
-			<Name>Bryan</Name>
-			<LastName>Cranston</LastName>
-			<BirthDate>1956-03-07</BirthDate>
-		</Lead>
-		<Lead id="L09">
-			<Name>Daniel</Name>
-			<LastName>Day-Lewis</LastName>
-			<BirthDate>1957-04-29</BirthDate>
-		</Lead>
-		<Lead id="L10">
-			<Name>Billy Cristal</Name>
-			<LastName>Sheen</LastName>
-			<BirthDate>1940-08-03</BirthDate>
-		</Lead>
-		<Lead id="L11">
-			<Name>Meg</Name>
-			<LastName>Ryan</LastName>
-			<BirthDate>1961-11-19</BirthDate>
-		</Lead>
-		<Lead id="L12">
-			<Name>Gerard</Name>
-			<LastName>Butler</LastName>
-			<BirthDate>1969-11-13</BirthDate>
-		</Lead>
-		<Lead id="L13">
-			<Name>Hugh</Name>
-			<LastName>Jackman</LastName>
-			<BirthDate>1968-10-12</BirthDate>
-		</Lead>
-		<Lead id="L14">
-			<Name>Brad</Name>
-			<LastName>Pitt</LastName>
-			<BirthDate>1963-12-18</BirthDate>
-		</Lead>
-		<Lead id="L15">
-			<Name>Eddie</Name>
-			<LastName>Redmayne</LastName>
-			<BirthDate>1982-01-06</BirthDate>
-		</Lead>
-		<Lead id="L16">
-			<Name>Andrzej</Name>
-			<LastName>Chyra</LastName>
-			<BirthDate>1964-08-27</BirthDate>
-		</Lead>
-		<Lead id="L17">
-			<Name>Ryan</Name>
-			<LastName>Gosling</LastName>
-			<BirthDate>1980-11-12</BirthDate>
-		</Lead>
-	</Actors>
-	<Directors>
-		<Director id="D01">
-			<Name>Stanley</Name>
-			<LastName>Kubrick</LastName>
-			<BirthDate>1928-07-26</BirthDate>
-		</Director>
-		<Director id="D02">
-			<Name>Sean</Name>
-			<LastName>Penn</LastName>
-			<BirthDate>1960-08-17</BirthDate>
-		</Director>
-		<Director id="D03">
-			<Name>Francis Ford</Name>
-			<LastName>Copolla</LastName>
-			<BirthDate>1939-04-07</BirthDate>
-		</Director>
-		<Director id="D04">
-			<Name>Anna</Name>
-			<LastName>Bond</LastName>
-			<BirthDate>1990-02-02</BirthDate>
-		</Director>
-		<Director id="D05">
-			<Name>Johnathan</Name>
-			<LastName>Demme</LastName>
-			<BirthDate>1944-02-22</BirthDate>
-		</Director>
-		<Director id="D06">
-			<Name>Troy</Name>
-			<LastName>Duffy</LastName>
-			<BirthDate>1971-06-08</BirthDate>
-		</Director>
-		<Director id="D07">
-			<Name>Marek</Name>
-			<LastName>Koterski</LastName>
-			<BirthDate>1942-06-03</BirthDate>
-		</Director>
-		<Director id="D08">
-			<Name>Wes</Name>
-			<LastName>Adnerson</LastName>
-			<BirthDate>1969-05-01</BirthDate>
-		</Director>
-		<Director id="D09">
-			<Name>Michael</Name>
-			<LastName>Mann</LastName>
-			<BirthDate>1943-02-05</BirthDate>
-		</Director>
-		<Director id="D10">
-			<Name>James L.</Name>
-			<LastName>Brooks</LastName>
-			<BirthDate>1940-05-09</BirthDate>
-		</Director>	
-		<Director id="D11">
-			<Name>Milos</Name>
-			<LastName>Forman</LastName>
-			<BirthDate>1932-02-18</BirthDate>
-		</Director>
-		<Director id="D12">
-			<Name>Rob</Name>
-			<LastName>Reiner</LastName>
-			<BirthDate>1945-03-06</BirthDate>
-		</Director>
-		<Director id="D13">
-			<Name>Cheryl</Name>
-			<LastName>Hines</LastName>
-			<BirthDate>1965-09-29</BirthDate>
-		</Director>
-		<Director id="D14">
-			<Name>Guy</Name>
-			<LastName>Ritchie</LastName>
-			<BirthDate>1968-10-10</BirthDate>
-		</Director>
-		<Director id="D15">
-			<Name>Tom</Name>
-			<LastName>Hooper</LastName>
-			<BirthDate>1972-10-01</BirthDate>
-		</Director>
-		<Director id="D16">
-			<Name>David</Name>
-			<LastName>Yates</LastName>
-			<BirthDate>1962-11-30</BirthDate>
-		</Director>
-		<Director id="D17">
-			<Name>Feliks</Name>
-			<LastName>Falk</LastName>
-			<BirthDate>1941-02-25</BirthDate>
-		</Director>
-		<Director id="D18">
-			<Name>Nicholas</Name>
-			<LastName>Winding Refn</LastName>
-			<BirthDate>1970-06-29</BirthDate>
-		</Director>
-	</Directors>
-	
-	
-	<Films>
-		<Film id="F01">
-			<Name>Lśnienie</Name>
-			<AvgScore>
-				8.2
-			</AvgScore>
-			<Categories>
-				<Category refId="CAT01">Horror</Category>
-			</Categories>
-			<Description>
-				Jack podejmuje pracę stróża odciętego od świata hotelu Overlook.
-				Wkrótce idylla zamienia się w koszmar. 
-			</Description>
-			<ReleaseYear>
-				1980
-			</ReleaseYear>
-			<Lead refId="L01">
-				<Name>Jack</Name>
-				<LastName>Nicholson</LastName>
-				<BirthDate>1937-04-22</BirthDate>
-			</Lead>
-			<Director refId="D01">
-				<Name>Stanley</Name>
-				<LastName>Kubrick</LastName>
-				<BirthDate>1928-07-26</BirthDate>
-			</Director>
-		</Film>
-		<Film id="F02">
-			<Name>Wszystko za życie</Name>
-			<AvgScore>
-				8.0
-			</AvgScore>
-			<Categories>
-				<Category refId="CAT02">Dramat</Category>
-			</Categories>
-			<Description>
-				Christopher kończy studia, ale zamiast poświęcić się karierze zawodowej,
-				wyrusza autostopem w kierunku Alaski. 
-			</Description>
-			<ReleaseYear>
-				2007
-			</ReleaseYear>
-			<Lead refId="L02">
-				<Name>Emile</Name>
-				<LastName>Hirsch</LastName>
-				<BirthDate>1985-03-13</BirthDate>
-			</Lead>
-			<Director refId="D02">
-				<Name>Sean</Name>
-				<LastName>Penn</LastName>
-				<BirthDate>1960-08-17</BirthDate>
-			</Director>
-		</Film>
-		<Film id="F03">
-			<Name>Czas apokalipsy</Name>
-			<AvgScore>
-				8.5
-			</AvgScore>
-			<Categories>
-				<Category refId="CAT02">Dramat</Category>
-				<Category refId="CAT03">Wojenny</Category>
-			</Categories>
-			<Description>
-				Adaptacja opowiadania Josepha Conrada "Jądro ciemności".
-				Przeniesiona w realia wojny wietnamskiej historia kapitana Willarda,
-				który otrzymuje misję odnalezienia i zlikwidowania pułkownika Kurtza.
-			</Description>
-			<ReleaseYear>
-				1979
-			</ReleaseYear>
-			<Lead refId="L03">
-				<Name>Martin</Name>
-				<LastName>Sheen</LastName>
-				<BirthDate>1940-08-03</BirthDate>
-			</Lead>
-			<Director refId="D03">
-				<Name>Francis Ford</Name>
-				<LastName>Copolla</LastName>
-				<BirthDate>1939-04-07</BirthDate>
-			</Director>
-		</Film>
-		<Film id="F04">
-			<Name>Kapitan Marvel</Name>
-			<AvgScore>
-				7.2
-			</AvgScore>
-			<Categories>
-				<Category refId="CAT04">Akcja</Category>
-				<Category refId="CAT05">Sci-Fi</Category>
-			</Categories>
-			<Description>
-				Ziemska kobieta po kontakcie z obcą rasą Kree otrzymuje nadludzkie moce.
-			</Description>
-			<ReleaseYear>
-				2019
-			</ReleaseYear>
-			<Lead refId="L04">
-				<Name>Brie</Name>
-				<LastName>Larson</LastName>
-				<BirthDate>1989-10-01</BirthDate>
-			</Lead>
-			<Director refId="D04">
-				<Name>Anna</Name>
-				<LastName>Bond</LastName>
-				<BirthDate>1990-02-02</BirthDate>
-			</Director>
-		</Film>
-		<Film id="F05">
-			<Name>Filadelfia</Name>
-			<AvgScore>
-				8.2
-			</AvgScore>
-			<Categories>
-				<Category refId="CAT02">Dramat</Category>
-			</Categories>
-			<Description>
-				Chorujący na AIDS prawnik zostaje zwolniony z pracy. Walcząc o godność, podaje do sądu byłych pracodawców.
-			</Description>
-			<ReleaseYear>
-				1993
-			</ReleaseYear>
-			<Lead refId="L05">
-				<Name>Tom</Name>
-				<LastName>Hanks</LastName>
-				<BirthDate>1956-07-09</BirthDate>
-			</Lead>
-			<Director refId="D05">
-				<Name>Johnathan</Name>
-				<LastName>Demme</LastName>
-				<BirthDate>1944-02-22</BirthDate>
-			</Director>
-		</Film>
-		<Film id="F06">
-			<Name>Święci z Bostonu</Name>
-			<AvgScore>
-				7.5
-			</AvgScore>
-			<Categories>
-				<Category refId="CAT04">Akcja</Category>
-			</Categories>
-			<Description>
-				Dwaj bracia podejmują walkę z bostońskimi złoczyńcami. Są przekonani, że sam Bóg powierzył im taką misję.
-			</Description>
-			<ReleaseYear>
-				1999
-			</ReleaseYear>
-			<Lead refId="L06">
-				<Name>Norman</Name>
-				<LastName>Reedus</LastName>
-				<BirthDate>1969-01-06</BirthDate>
-			</Lead>
-			<Director refId="D06">
-				<Name>Troy</Name>
-				<LastName>Duffy</LastName>
-				<BirthDate>1971-06-08</BirthDate>
-			</Director>
-		</Film>
-		<Film id="F07">
-			<Name>Dzień świra</Name>
-			<AvgScore>
-				8.1
-			</AvgScore>
-			<Categories>
-				<Category refId="CAT02">Dramat</Category>
-				<Category refId="CAT06">Komedia</Category>
-			</Categories>
-			<Description>
-				Adaś Miauczyński, 49-letni rozwiedziony polonista, żyje w kręgu swoich natręctw, nie potrafiąc wyrwać się z nudy i rutyny dnia codziennego.
-			</Description>
-			<ReleaseYear>
-				2002
-			</ReleaseYear>
-			<Lead refId="L07">
-				<Name>Marek</Name>
-				<LastName>Kondrat</LastName>
-				<BirthDate>1950-10-18</BirthDate>
-			</Lead>
-			<Director refId="D07">
-				<Name>Marek</Name>
-				<LastName>Koterski</LastName>
-				<BirthDate>1942-06-03</BirthDate>
-			</Director>
-		</Film>
-		<Film id="F08">
-			<Name>Wyspa psów</Name>
-			<AvgScore>
-				7.2
-			</AvgScore>
-			<Categories>
-				<Category refId="CAT06">Komedia</Category>
-				<Category refId="CAT07">Przygodowy</Category>
-			</Categories>
-			<Description>
-				Osadzona w Japonii historia chłopca podróżującego w celu odnalezienia swojego zaginionego psa. 
-			</Description>
-			<ReleaseYear>
-				2018
-			</ReleaseYear>
-			<Lead refId="L08">
-				<Name>Bryan</Name>
-				<LastName>Cranston</LastName>
-				<BirthDate>1956-03-07</BirthDate>
-			</Lead>
-			<Director refId="D08">
-				<Name>Wes</Name>
-				<LastName>Adnerson</LastName>
-				<BirthDate>1969-05-01</BirthDate>
-			</Director>
-		</Film>
-		<Film id="F09">
-			<Name>Ostatni Mohikanin</Name>
-			<AvgScore>
-				7.9
-			</AvgScore>
-			<Categories>
-				<Category refId="CAT02">Dramat</Category>
-			</Categories>
-			<Description>
-				Wychowywany przez Indian Sokole Oko staje do walki z najeźdźcami i zakochuje się w córce angielskiego dowódcy. 
-			</Description>
-			<ReleaseYear>
-				1992
-			</ReleaseYear>
-			<Lead refId="L09">
-				<Name>Daniel</Name>
-				<LastName>Day-Lewis</LastName>
-				<BirthDate>1957-04-29</BirthDate>
-			</Lead>
-			<Director refId="D09">
-				<Name>Michael</Name>
-				<LastName>Mann</LastName>
-				<BirthDate>1943-02-05</BirthDate>
-			</Director>
-		</Film>
-		<Film id="F10">
-			<Name>Lepiej być nie może</Name>
-			<AvgScore>
-				7.6
-			</AvgScore>
-			<Categories>
-				<Category refId="CAT02">Dramat</Category>
-				<Category refId="CAT06">Komedia</Category>
-			</Categories>
-			<Description>
-				Ekscentryczny Melvin zakochuje się w kelnerce z problemami. 
-			</Description>
-			<ReleaseYear>
-				1997
-			</ReleaseYear>
-			<Lead refId="L01">
-				<Name>Jack</Name>
-				<LastName>Nicholson</LastName>
-				<BirthDate>1937-04-22</BirthDate>
-			</Lead>
-			<Director refId="D10">
-				<Name>James L.</Name>
-				<LastName>Brooks</LastName>
-				<BirthDate>1940-05-09</BirthDate>
-			</Director>
-		</Film>
-		<Film id="F11">
-			<Name>Lot nad kukułczym gniazdem</Name>
-			<AvgScore>
-				8.3
-			</AvgScore>
-			<Categories>
-				<Category refId="CAT01">Horror</Category>
-			</Categories>
-			<Description>
-				Historia złodzieja, szulera i chuligana, który, by uniknąć więzienia, udaje niepoczytalność.
-				Trafia do szpitala dla umysłowo chorych, gdzie twardą ręką rządzi siostra Ratched.
-			</Description>
-			<ReleaseYear>
-				1975
-			</ReleaseYear>
-			<Lead refId="L01">
-				<Name>Jack</Name>
-				<LastName>Nicholson</LastName>
-				<BirthDate>1937-04-22</BirthDate>
-			</Lead>
-			<Director refId="D11">
-				<Name>Milos</Name>
-				<LastName>Forman</LastName>
-				<BirthDate>1932-02-18</BirthDate>
-			</Director>
-		</Film>
-		<Film id="F12">
-			<Name>Choć goni nas czas</Name>
-			<AvgScore>
-				7.5
-			</AvgScore>
-			<Categories>
-				<Category refId="CAT02">Dramat</Category>
-				<Category refId="CAT06">Komedia</Category>
-			</Categories>
-			<Description>
-				Historia dwóch umierających mężczyzn, którzy pod wpływem szalonych przygód zostają przyjaciółmi.
-			</Description>
-			<ReleaseYear>
-				2007
-			</ReleaseYear>
-			<Lead refId="L01">
-				<Name>Jack</Name>
-				<LastName>Nicholson</LastName>
-				<BirthDate>1939-04-22</BirthDate>
-			</Lead>
-			<Director refId="D12">
-				<Name>Rob</Name>
-				<LastName>Reiner</LastName>
-				<BirthDate>1945-03-06</BirthDate>
-			</Director>
-		</Film>
-		<Film id="F13">
-			<Name>Kiedy Harry poznał Sally</Name>
-			<AvgScore>
-				7.4
-			</AvgScore>
-			<Categories>
-				<Category refId="CAT06">Komedia</Category>
-			</Categories>
-			<Description>
-				Harry i Sally poznają się w czasach studenckich, ale nie pałają do siebie zbytnią sympatią.
-				Spotkanie po latach daje jednak początek przyjaźni.
-			</Description>
-			<ReleaseYear>
-				1985
-			</ReleaseYear>
-			<Lead refId="L10">
-				<Name>Billy Cristal</Name>
-				<LastName>Sheen</LastName>
-				<BirthDate>1940-08-03</BirthDate>
-			</Lead>
-			<Director refId="D03">
-				<Name>Rob</Name>
-				<LastName>Reiner</LastName>
-				<BirthDate>1945-03-06</BirthDate>
-			</Director>
-		</Film>
-		<Film id="F14">
-			<Name>Słodka zemsta</Name>
-			<AvgScore>
-				6.0
-			</AvgScore>
-			<Categories>
-				<Category refId="CAT04">Akcja</Category>
-				<Category refId="CAT05">Sci-Fi</Category>
-			</Categories>
-			<Description>
-				Zdradzona żona dokonuje zemsty na niewiernym mężu, przyklejając go taśmą izolacyjną do sedesu. Wkrótce ich dom staje się celem włamywaczy.
-			</Description>
-			<ReleaseYear>
-				2007
-			</ReleaseYear>
-			<Lead refId="L11">
-				<Name>Meg</Name>
-				<LastName>Ryan</LastName>
-				<BirthDate>1961-11-19</BirthDate>
-			</Lead>
-			<Director refId="D13">
-				<Name>Cheryl</Name>
-				<LastName>Hines</LastName>
-				<BirthDate>1965-09-29</BirthDate>
-			</Director>
-		</Film>
-		<Film id="F15">
-			<Name>Rock'N'Rolla</Name>
-			<AvgScore>
-				7.2
-			</AvgScore>
-			<Categories>
-				<Category refId="CAT08">Kryminalny</Category>
-			</Categories>
-			<Description>
-				Grupa drobnych złodziei zadłuża się u szefa londyńskiego półświatka.
-				Ten jednocześnie usiłuje ubić interes z rosyjskim miliarderem i zapanować nad swoim pasierbem,
-				uzależnionym od narkotyków rockandrollowcem. 
-			</Description>
-			<ReleaseYear>
-				2008
-			</ReleaseYear>
-			<Lead refId="L12">
-				<Name>Gerard</Name>
-				<LastName>Butler</LastName>
-				<BirthDate>1969-11-13</BirthDate>
-			</Lead>
-			<Director refId="D14">
-				<Name>Guy</Name>
-				<LastName>Ritchie</LastName>
-				<BirthDate>1968-10-10</BirthDate>
-			</Director>
-		</Film>
-		<Film id="F16">
-			<Name>Les Misérables: Nędznicy</Name>
-			<AvgScore>
-				8.0
-			</AvgScore>
-			<Categories>
-				<Category refId="CAT02">Dramat</Category>
-			</Categories>
-			<Description>
-				Adaptacja musicalu na podstawie powieści Victora Hugo.
-				Były więzień, Jean Valjean, dzięki pomocy biskupa zdobywa pozycję i zaczyna pomagać biednym,
-				podczas gdy prześladuje go inspektor Javert.
-			</Description>
-			<ReleaseYear>
-				2012
-			</ReleaseYear>
-			<Lead refId="L13">
-				<Name>Hugh</Name>
-				<LastName>Jackman</LastName>
-				<BirthDate>1968-10-12</BirthDate>
-			</Lead>
-			<Director refId="D15">
-				<Name>Tom</Name>
-				<LastName>Hooper</LastName>
-				<BirthDate>1972-10-01</BirthDate>
-			</Director>
-		</Film>
-		<Film id="F17">
-			<Name>Przekręt</Name>
-			<AvgScore>
-				7.8
-			</AvgScore>
-			<Categories>
-				<Category refId="CAT06">Komedia</Category>
-				<Category refId="CAT08">Kryminał</Category>
-			</Categories>
-			<Description>
-				Historia złożona z kilku gangsterskich opowieści, które splatają się wokół kradzieży drogocennego diamentu.
-			</Description>
-			<ReleaseYear>
-				2000
-			</ReleaseYear>
-			<Lead refId="L14">
-				<Name>Brad</Name>
-				<LastName>Pitt</LastName>
-				<BirthDate>1963-12-18</BirthDate>
-			</Lead>
-			<Director refId="D14">
-				<Name>Guy</Name>
-				<LastName>Ritchie</LastName>
-				<BirthDate>1968-10-10</BirthDate>
-			</Director>
-		</Film>
-		<Film id="F18">
-			<Name>Fantastyczne zwierzęta i jak je znaleźć</Name>
-			<AvgScore>
-				7.2
-			</AvgScore>
-			<Categories>
-				<Category refId="CAT06">Komedia</Category>
-				<Category refId="CAT07">Przygodowy</Category>
-				<Category refId="CAT09">Fantasy</Category>
-			</Categories>
-			<Description>
-				Nowy Jork jest terroryzowany przez tajemnicze bestie, które chcą dopaść członków organizacji Powtórzmy Salem.
-				Tymczasem do miasta przyjeżdża pisarz Newt Scamander. 
-			</Description>
-			<ReleaseYear>
-				2016
-			</ReleaseYear>
-			<Lead refId="L15">
-				<Name>Eddie</Name>
-				<LastName>Redmayne</LastName>
-				<BirthDate>1982-01-06</BirthDate>
-			</Lead>
-			<Director refId="D16">
-				<Name>David</Name>
-				<LastName>Yates</LastName>
-				<BirthDate>1962-11-30</BirthDate>
-			</Director>
-		</Film>
-		<Film id="F19">
-			<Name>Komornik</Name>
-			<AvgScore>
-				7.5
-			</AvgScore>
-			<Categories>
-				<Category refId="CAT02">Dramat</Category>
-			</Categories>
-			<Description>
-				Lucjan Bohme bezwzględnie egzekwuje długi mieszkańców Wałbrzycha. 
-			</Description>
-			<ReleaseYear>
-				1992
-			</ReleaseYear>
-			<Lead refId="L16">
-				<Name>Andrzej</Name>
-				<LastName>Chyra</LastName>
-				<BirthDate>1964-08-27</BirthDate>
-			</Lead>
-			<Director refId="D17">
-				<Name>Feliks</Name>
-				<LastName>Falk</LastName>
-				<BirthDate>1941-02-25</BirthDate>
-			</Director>
-		</Film>
-		<Film id="F20">
-			<Name>Drive</Name>
-			<AvgScore>
-				8.0
-			</AvgScore>
-			<Categories>
-				<Category refId="CAT02">Dramat</Category>
-				<Category refId="CAT04">Akcja</Category>
-			</Categories>
-			<Description>
-				Bezimienny kierowca postanawia pomóc mężowi swojej sąsiadki w anulowaniu długu u groźnych bandytów.
-			</Description>
-			<ReleaseYear>
-				2011
-			</ReleaseYear>
-			<Lead refId="L17">
-				<Name>Ryan</Name>
-				<LastName>Gosling</LastName>
-				<BirthDate>1980-11-12</BirthDate>
-			</Lead>
-			<Director refId="D18">
-				<Name>Nicholas</Name>
-				<LastName>Winding Refn</LastName>
-				<BirthDate>1970-06-29</BirthDate>
-			</Director>
-		</Film>
-	</Films>
+              xmlns:xsd="http://www.w3.org/2001/XMLSchema-instance"
+              xsd:schemaLocation="http://it.p.lodz.pl/pkck movies.xsd">
+    <Head>
+        <Author>Adrian Fijałkowski</Author>
+        <EMail>210171@edu.p.lodz.pl</EMail>
+        <Name>Baza filmów</Name>
+    </Head>
+    <Categories>
+        <Category id="CAT01">Horror</Category>
+        <Category id="CAT02">Dramat</Category>
+        <Category id="CAT03">Wojenny</Category>
+        <Category id="CAT04">Akcja</Category>
+        <Category id="CAT05">Sci-Fi</Category>
+        <Category id="CAT06">Komedia</Category>
+        <Category id="CAT07">Przygodowy</Category>
+        <Category id="CAT08">Kryminalny</Category>
+        <Category id="CAT09">Fantasy</Category>
+    </Categories>
+    <Actors>
+        <Lead id="L01">
+            <Name>Jack</Name>
+            <LastName>Nicholson</LastName>
+            <BirthDate>1937-04-22</BirthDate>
+        </Lead>
+        <Lead id="L02">
+            <Name>Emile</Name>
+            <LastName>Hirsch</LastName>
+            <BirthDate>1985-03-13</BirthDate>
+        </Lead>
+        <Lead id="L03">
+            <Name>Martin</Name>
+            <LastName>Sheen</LastName>
+            <BirthDate>1940-08-03</BirthDate>
+        </Lead>
+        <Lead id="L04">
+            <Name>Brie</Name>
+            <LastName>Larson</LastName>
+            <BirthDate>1989-10-01</BirthDate>
+        </Lead>
+        <Lead id="L05">
+            <Name>Tom</Name>
+            <LastName>Hanks</LastName>
+            <BirthDate>1956-07-09</BirthDate>
+        </Lead>
+        <Lead id="L06">
+            <Name>Norman</Name>
+            <LastName>Reedus</LastName>
+            <BirthDate>1969-01-06</BirthDate>
+        </Lead>
+        <Lead id="L07">
+            <Name>Marek</Name>
+            <LastName>Kondrat</LastName>
+            <BirthDate>1950-10-18</BirthDate>
+        </Lead>
+        <Lead id="L08">
+            <Name>Bryan</Name>
+            <LastName>Cranston</LastName>
+            <BirthDate>1956-03-07</BirthDate>
+        </Lead>
+        <Lead id="L09">
+            <Name>Daniel</Name>
+            <LastName>Day-Lewis</LastName>
+            <BirthDate>1957-04-29</BirthDate>
+        </Lead>
+        <Lead id="L10">
+            <Name>Billy Cristal</Name>
+            <LastName>Sheen</LastName>
+            <BirthDate>1940-08-03</BirthDate>
+        </Lead>
+        <Lead id="L11">
+            <Name>Meg</Name>
+            <LastName>Ryan</LastName>
+            <BirthDate>1961-11-19</BirthDate>
+        </Lead>
+        <Lead id="L12">
+            <Name>Gerard</Name>
+            <LastName>Butler</LastName>
+            <BirthDate>1969-11-13</BirthDate>
+        </Lead>
+        <Lead id="L13">
+            <Name>Hugh</Name>
+            <LastName>Jackman</LastName>
+            <BirthDate>1968-10-12</BirthDate>
+        </Lead>
+        <Lead id="L14">
+            <Name>Brad</Name>
+            <LastName>Pitt</LastName>
+            <BirthDate>1963-12-18</BirthDate>
+        </Lead>
+        <Lead id="L15">
+            <Name>Eddie</Name>
+            <LastName>Redmayne</LastName>
+            <BirthDate>1982-01-06</BirthDate>
+        </Lead>
+        <Lead id="L16">
+            <Name>Andrzej</Name>
+            <LastName>Chyra</LastName>
+            <BirthDate>1964-08-27</BirthDate>
+        </Lead>
+        <Lead id="L17">
+            <Name>Ryan</Name>
+            <LastName>Gosling</LastName>
+            <BirthDate>1980-11-12</BirthDate>
+        </Lead>
+    </Actors>
+    <Directors>
+        <Director id="D01">
+            <Name>Stanley</Name>
+            <LastName>Kubrick</LastName>
+            <BirthDate>1928-07-26</BirthDate>
+        </Director>
+        <Director id="D02">
+            <Name>Sean</Name>
+            <LastName>Penn</LastName>
+            <BirthDate>1960-08-17</BirthDate>
+        </Director>
+        <Director id="D03">
+            <Name>Francis Ford</Name>
+            <LastName>Copolla</LastName>
+            <BirthDate>1939-04-07</BirthDate>
+        </Director>
+        <Director id="D04">
+            <Name>Anna</Name>
+            <LastName>Bond</LastName>
+            <BirthDate>1990-02-02</BirthDate>
+        </Director>
+        <Director id="D05">
+            <Name>Johnathan</Name>
+            <LastName>Demme</LastName>
+            <BirthDate>1944-02-22</BirthDate>
+        </Director>
+        <Director id="D06">
+            <Name>Troy</Name>
+            <LastName>Duffy</LastName>
+            <BirthDate>1971-06-08</BirthDate>
+        </Director>
+        <Director id="D07">
+            <Name>Marek</Name>
+            <LastName>Koterski</LastName>
+            <BirthDate>1942-06-03</BirthDate>
+        </Director>
+        <Director id="D08">
+            <Name>Wes</Name>
+            <LastName>Adnerson</LastName>
+            <BirthDate>1969-05-01</BirthDate>
+        </Director>
+        <Director id="D09">
+            <Name>Michael</Name>
+            <LastName>Mann</LastName>
+            <BirthDate>1943-02-05</BirthDate>
+        </Director>
+        <Director id="D10">
+            <Name>James L.</Name>
+            <LastName>Brooks</LastName>
+            <BirthDate>1940-05-09</BirthDate>
+        </Director>
+        <Director id="D11">
+            <Name>Milos</Name>
+            <LastName>Forman</LastName>
+            <BirthDate>1932-02-18</BirthDate>
+        </Director>
+        <Director id="D12">
+            <Name>Rob</Name>
+            <LastName>Reiner</LastName>
+            <BirthDate>1945-03-06</BirthDate>
+        </Director>
+        <Director id="D13">
+            <Name>Cheryl</Name>
+            <LastName>Hines</LastName>
+            <BirthDate>1965-09-29</BirthDate>
+        </Director>
+        <Director id="D14">
+            <Name>Guy</Name>
+            <LastName>Ritchie</LastName>
+            <BirthDate>1968-10-10</BirthDate>
+        </Director>
+        <Director id="D15">
+            <Name>Tom</Name>
+            <LastName>Hooper</LastName>
+            <BirthDate>1972-10-01</BirthDate>
+        </Director>
+        <Director id="D16">
+            <Name>David</Name>
+            <LastName>Yates</LastName>
+            <BirthDate>1962-11-30</BirthDate>
+        </Director>
+        <Director id="D17">
+            <Name>Feliks</Name>
+            <LastName>Falk</LastName>
+            <BirthDate>1941-02-25</BirthDate>
+        </Director>
+        <Director id="D18">
+            <Name>Nicholas</Name>
+            <LastName>Winding Refn</LastName>
+            <BirthDate>1970-06-29</BirthDate>
+        </Director>
+    </Directors>
+
+    <Films>
+        <Film id="F01" leadId="L01" directorId="D01">
+            <Name>Lśnienie</Name>
+            <AvgScore>
+                8.2
+            </AvgScore>
+            <Categories>
+                <Category>CAT1</Category>
+            </Categories>
+            <Description>
+                Jack podejmuje pracę stróża odciętego od świata hotelu Overlook.
+                Wkrótce idylla zamienia się w koszmar.
+            </Description>
+            <ReleaseYear>
+                1980
+            </ReleaseYear>
+        </Film>
+        <Film id="F02" leadId="L02" directorId="D02">
+            <Name>Wszystko za życie</Name>
+            <AvgScore>
+                8.0
+            </AvgScore>
+            <Categories>
+                <Category>CAT02</Category>
+            </Categories>
+            <Description>
+                Christopher kończy studia, ale zamiast poświęcić się karierze zawodowej,
+                wyrusza autostopem w kierunku Alaski.
+            </Description>
+            <ReleaseYear>
+                2007
+            </ReleaseYear>
+        </Film>
+        <Film id="F03" leadId="L03" directorId="D03">
+            <Name>Czas apokalipsy</Name>
+            <AvgScore>
+                8.5
+            </AvgScore>
+            <Categories>
+                <Category>CAT02</Category>
+                <Category>CAT03</Category>
+            </Categories>
+            <Description>
+                Adaptacja opowiadania Josepha Conrada "Jądro ciemności".
+                Przeniesiona w realia wojny wietnamskiej historia kapitana Willarda,
+                który otrzymuje misję odnalezienia i zlikwidowania pułkownika Kurtza.
+            </Description>
+            <ReleaseYear>
+                1979
+            </ReleaseYear>
+        </Film>
+        <Film id="F04" leadId="L04" directorId="D04">
+            <Name>Kapitan Marvel</Name>
+            <AvgScore>
+                7.2
+            </AvgScore>
+            <Categories>
+                <Category>CAT04</Category>
+                <Category>CAT05</Category>
+            </Categories>
+            <Description>
+                Ziemska kobieta po kontakcie z obcą rasą Kree otrzymuje nadludzkie moce.
+            </Description>
+            <ReleaseYear>
+                2019
+            </ReleaseYear>
+        </Film>
+        <Film id="F05" leadId="L05" directorId="D05">
+            <Name>Filadelfia</Name>
+            <AvgScore>
+                8.2
+            </AvgScore>
+            <Categories>
+                <Category>CAT02</Category>
+            </Categories>
+            <Description>
+                Chorujący na AIDS prawnik zostaje zwolniony z pracy. Walcząc o godność, podaje do sądu byłych
+                pracodawców.
+            </Description>
+            <ReleaseYear>
+                1993
+            </ReleaseYear>
+        </Film>
+        <Film id="F06" leadId="L06" directorId="D06">
+            <Name>Święci z Bostonu</Name>
+            <AvgScore>
+                7.5
+            </AvgScore>
+            <Categories>
+                <Category>CAT04</Category>
+            </Categories>
+            <Description>
+                Dwaj bracia podejmują walkę z bostońskimi złoczyńcami. Są przekonani, że sam Bóg powierzył im taką
+                misję.
+            </Description>
+            <ReleaseYear>
+                1999
+            </ReleaseYear>
+        </Film>
+        <Film id="F07" leadId="L07" directorId="D07">
+            <Name>Dzień świra</Name>
+            <AvgScore>
+                8.1
+            </AvgScore>
+            <Categories>
+                <Category>CAT02</Category>
+                <Category>CAT06</Category>
+            </Categories>
+            <Description>
+                Adaś Miauczyński, 49-letni rozwiedziony polonista, żyje w kręgu swoich natręctw, nie potrafiąc wyrwać
+                się z nudy i rutyny dnia codziennego.
+            </Description>
+            <ReleaseYear>
+                2002
+            </ReleaseYear>
+        </Film>
+        <Film id="F08" leadId="L08" directorId="D08">
+            <Name>Wyspa psów</Name>
+            <AvgScore>
+                7.2
+            </AvgScore>
+            <Categories>
+                <Category>CAT06</Category>
+                <Category>CAT07</Category>
+            </Categories>
+            <Description>
+                Osadzona w Japonii historia chłopca podróżującego w celu odnalezienia swojego zaginionego psa.
+            </Description>
+            <ReleaseYear>
+                2018
+            </ReleaseYear>
+        </Film>
+        <Film id="F09" leadId="L09" directorId="D09">
+            <Name>Ostatni Mohikanin</Name>
+            <AvgScore>
+                7.9
+            </AvgScore>
+            <Categories>
+                <Category>CAT02</Category>
+            </Categories>
+            <Description>
+                Wychowywany przez Indian Sokole Oko staje do walki z najeźdźcami i zakochuje się w córce angielskiego
+                dowódcy.
+            </Description>
+            <ReleaseYear>
+                1992
+            </ReleaseYear>
+        </Film>
+        <Film id="F10" leadId="L01" directorId="D10">
+            <Name>Lepiej być nie może</Name>
+            <AvgScore>
+                7.6
+            </AvgScore>
+            <Categories>
+                <Category>CAT02</Category>
+                <Category>CAT06</Category>
+            </Categories>
+            <Description>
+                Ekscentryczny Melvin zakochuje się w kelnerce z problemami.
+            </Description>
+            <ReleaseYear>
+                1997
+            </ReleaseYear>
+        </Film>
+        <Film id="F11" leadId="L01" directorId="D11">
+            <Name>Lot nad kukułczym gniazdem</Name>
+            <AvgScore>
+                8.3
+            </AvgScore>
+            <Categories>
+                <Category>CAT01</Category>
+            </Categories>
+            <Description>
+                Historia złodzieja, szulera i chuligana, który, by uniknąć więzienia, udaje niepoczytalność.
+                Trafia do szpitala dla umysłowo chorych, gdzie twardą ręką rządzi siostra Ratched.
+            </Description>
+            <ReleaseYear>
+                1975
+            </ReleaseYear>
+        </Film>
+        <Film id="F12" leadId="L01" directorId="D12">
+            <Name>Choć goni nas czas</Name>
+            <AvgScore>
+                7.5
+            </AvgScore>
+            <Categories>
+                <Category>CAT02</Category>
+                <Category>CAT06</Category>
+            </Categories>
+            <Description>
+                Historia dwóch umierających mężczyzn, którzy pod wpływem szalonych przygód zostają przyjaciółmi.
+            </Description>
+            <ReleaseYear>
+                2007
+            </ReleaseYear>
+        </Film>
+        <Film id="F13" leadId="L10" directorId="D03">
+            <Name>Kiedy Harry poznał Sally</Name>
+            <AvgScore>
+                7.4
+            </AvgScore>
+            <Categories>
+                <Category>CAT06</Category>
+            </Categories>
+            <Description>
+                Harry i Sally poznają się w czasach studenckich, ale nie pałają do siebie zbytnią sympatią.
+                Spotkanie po latach daje jednak początek przyjaźni.
+            </Description>
+            <ReleaseYear>
+                1985
+            </ReleaseYear>
+        </Film>
+        <Film id="F14" leadId="L11" directorId="D13">
+            <Name>Słodka zemsta</Name>
+            <AvgScore>
+                6.0
+            </AvgScore>
+            <Categories>
+                <Category>CAT04</Category>
+                <Category>CAT05</Category>
+            </Categories>
+            <Description>
+                Zdradzona żona dokonuje zemsty na niewiernym mężu, przyklejając go taśmą izolacyjną do sedesu. Wkrótce
+                ich dom staje się celem włamywaczy.
+            </Description>
+            <ReleaseYear>
+                2007
+            </ReleaseYear>
+        </Film>
+        <Film id="F15" leadId="L12" directorId="D14">
+            <Name>Rock'N'Rolla</Name>
+            <AvgScore>
+                7.2
+            </AvgScore>
+            <Categories>
+                <Category>CAT08</Category>
+            </Categories>
+            <Description>
+                Grupa drobnych złodziei zadłuża się u szefa londyńskiego półświatka.
+                Ten jednocześnie usiłuje ubić interes z rosyjskim miliarderem i zapanować nad swoim pasierbem,
+                uzależnionym od narkotyków rockandrollowcem.
+            </Description>
+            <ReleaseYear>
+                2008
+            </ReleaseYear>
+        </Film>
+        <Film id="F16" leadId="L13" directorId="D15">
+            <Name>Les Misérables: Nędznicy</Name>
+            <AvgScore>
+                8.0
+            </AvgScore>
+            <Categories>
+                <Category>CAT02</Category>
+            </Categories>
+            <Description>
+                Adaptacja musicalu na podstawie powieści Victora Hugo.
+                Były więzień, Jean Valjean, dzięki pomocy biskupa zdobywa pozycję i zaczyna pomagać biednym,
+                podczas gdy prześladuje go inspektor Javert.
+            </Description>
+            <ReleaseYear>
+                2012
+            </ReleaseYear>
+        </Film>
+        <Film id="F17" leadId="L14" directorId="D14">
+            <Name>Przekręt</Name>
+            <AvgScore>
+                7.8
+            </AvgScore>
+            <Categories>
+                <Category>CAT06</Category>
+                <Category>CAT08</Category>
+            </Categories>
+            <Description>
+                Historia złożona z kilku gangsterskich opowieści, które splatają się wokół kradzieży drogocennego
+                diamentu.
+            </Description>
+            <ReleaseYear>
+                2000
+            </ReleaseYear>
+        </Film>
+        <Film id="F18" leadId="L15" directorId="D16">
+            <Name>Fantastyczne zwierzęta i jak je znaleźć</Name>
+            <AvgScore>
+                7.2
+            </AvgScore>
+            <Categories>
+                <Category>CAT06</Category>
+                <Category>CAT07</Category>
+                <Category>CAT09</Category>
+            </Categories>
+            <Description>
+                Nowy Jork jest terroryzowany przez tajemnicze bestie, które chcą dopaść członków organizacji Powtórzmy
+                Salem.
+                Tymczasem do miasta przyjeżdża pisarz Newt Scamander.
+            </Description>
+            <ReleaseYear>
+                2016
+            </ReleaseYear>
+        </Film>
+        <Film id="F19" leadId="L16" directorId="D17">
+            <Name>Komornik</Name>
+            <AvgScore>
+                7.5
+            </AvgScore>
+            <Categories>
+                <Category>CAT02</Category>
+            </Categories>
+            <Description>
+                Lucjan Bohme bezwzględnie egzekwuje długi mieszkańców Wałbrzycha.
+            </Description>
+            <ReleaseYear>
+                1992
+            </ReleaseYear>
+        </Film>
+        <Film id="F20" leadId="L17" directorId="D18">
+            <Name>Drive</Name>
+            <AvgScore>
+                8.0
+            </AvgScore>
+            <Categories>
+                <Category>CAT02</Category>
+                <Category>CAT04</Category>
+            </Categories>
+            <Description>
+                Bezimienny kierowca postanawia pomóc mężowi swojej sąsiadki w anulowaniu długu u groźnych bandytów.
+            </Description>
+            <ReleaseYear>
+                2011
+            </ReleaseYear>
+        </Film>
+    </Films>
 </FilmDatabase>
