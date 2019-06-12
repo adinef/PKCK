@@ -11,10 +11,12 @@ import javafx.stage.FileChooser;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import pl.lodz.p.it.pkck.Main;
+import pl.lodz.p.it.pkck.XML.IdGenerator;
 import pl.lodz.p.it.pkck.XML.model.Category;
 import pl.lodz.p.it.pkck.view.common.FunctionWithException;
 
 import java.io.File;
+import java.util.List;
 
 public class FXUtils {
 
@@ -35,6 +37,51 @@ public class FXUtils {
             editMenuForCategory((Category) object);
         }
     }
+
+    public static void addMenuFor(Class clazz, List<?> allEntities) {
+        if (Category.class.equals(clazz)) {
+            addMenuForCategory((List<Category>)allEntities);
+        }
+    }
+
+    private static void addMenuForCategory(List<Category> allEntities) {
+        Category category = new Category();
+        category.setCatId(IdGenerator.generateFrom(allEntities));
+
+        VBox mainVBox = new VBox();
+        mainVBox.setMinHeight(500);
+        mainVBox.setSpacing(10);
+        Label nameLabel = new Label("Name");
+        TextField nameTextField = new TextField(category.getName());
+        JFXAlert alert = new JFXAlert((Stage) Main.getMainStage());
+        JFXDialogLayout layout = new JFXDialogLayout();
+        JFXButton saveButton = new JFXButton("Save");
+        JFXButton cancelButton = new JFXButton("Cancel");
+        saveButton.setOnAction(
+                (e) -> {
+                    category.setName(nameTextField.getText());
+                    allEntities.add(category);
+                    alert.hideWithAnimation();
+                    e.consume();
+                }
+        );
+        cancelButton.setOnAction(
+                (e) -> {
+                    alert.hideWithAnimation();
+                    e.consume();
+                }
+        );
+        mainVBox.getChildren().addAll(nameLabel, nameTextField);
+        layout.setHeading(new Label("Add category " + category.getCatId()));
+        layout.setBody(mainVBox);
+        layout.setActions(saveButton, cancelButton);
+        alert.setAnimation(JFXAlertAnimation.CENTER_ANIMATION);
+        alert.initModality(Modality.WINDOW_MODAL);
+        alert.setOverlayClose(true);
+        alert.setContent(layout);
+        alert.showAndWait();
+    }
+
 
     private static void editMenuForCategory(Category cat) {
         VBox mainVBox = new VBox();

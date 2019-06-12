@@ -2,10 +2,8 @@ package pl.lodz.p.it.pkck.view;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.MenuItem;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TabPane;
-import javafx.scene.control.TableView;
+import javafx.geometry.Orientation;
+import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import pl.lodz.p.it.pkck.XML.TableName;
@@ -60,19 +58,50 @@ public class Controller {
                     supplierPair.getValue(),
                     supplierPair.getKey()
             );
-            tabl.setOnMouseClicked(e -> this.handleDoubleClickFor(e, tabl.getSelectionModel().getSelectedItem()));
+
+            ContextMenu contextMenu = new ContextMenu();
+            MenuItem newItem = new MenuItem("New item");
+            MenuItem editItem = new MenuItem("Edit item");
+            MenuItem deleteItem = new MenuItem("Delete item");
+            contextMenu.getItems().addAll(editItem, newItem, deleteItem);
+            tabl.setContextMenu(contextMenu);
+
+            editItem.setOnAction(
+                    (e) -> {
+                        this.edit(tabl.getSelectionModel().getSelectedItem());
+                        reloadContent(supplierPair, tabl);
+                        e.consume();
+                    }
+            );
+
+            newItem.setOnAction(
+                    (e) -> {
+                        this.newElem(supplierPair.getKey(), supplierPair.getValue().apply(this.currentDatabase));
+                        reloadContent(supplierPair, tabl);
+                        e.consume();
+                    }
+            );
+
+            deleteItem.setOnAction(
+                    (e) -> {
+                        supplierPair.getValue().apply(currentDatabase).remove(tabl.getSelectionModel().getSelectedItem());
+                        reloadContent(supplierPair, tabl);
+                        e.consume();
+                    }
+            );
+
             Tab tab = new Tab();
             TableName annotation = (TableName)supplierPair.getKey().getAnnotation(TableName.class);
             if (annotation != null) {
                 tab.setText(annotation.value());
             }
+
             VBox vBox = new VBox();
             vBox.getChildren().add(tabl);
             tab.setContent(vBox);
             tab.selectedProperty().addListener(
                     (e) -> {
                         tabl.refresh();
-                        System.out.println("REFRESH: " + supplierPair.getKey());
                     }
             );
             this.tabPane.getTabs().add(tab);
@@ -80,14 +109,20 @@ public class Controller {
         }
     }
 
-    private void handleDoubleClickFor(MouseEvent event, Object obj) {
-        if (event.getClickCount() == 2) {
+    private void reloadContent(Map.Entry<Class, Function<FilmDatabase, List>> supplierPair,
+                               TableView tabl) {
+        tabl.getItems().clear();
+        tabl.getItems().addAll(supplierPair.getValue().apply(currentDatabase));
+    }
+
+    private void edit(Object obj) {
+        if (obj != null) {
             FXUtils.editMenuFor(obj);
-            TableView tableView = this.tableViews.getOrDefault(obj.getClass(), null);
-            if (tableView != null) {
-                tableView.refresh();
-            }
         }
+    }
+
+    private void newElem(Class clazz, List<?> elems) {
+        FXUtils.addMenuFor(clazz, elems);
     }
 
     private void enableSaveButton() {
@@ -101,7 +136,6 @@ public class Controller {
     private void clearTableView() {
         this.tableViews.clear();
     }
-
 
     public void saveFile(ActionEvent actionEvent) {
     }
