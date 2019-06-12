@@ -3,10 +3,13 @@ package pl.lodz.p.it.pkck.XML.model;
 import lombok.Data;
 import pl.lodz.p.it.pkck.XML.TableColumnCell;
 import pl.lodz.p.it.pkck.XML.TableName;
+import pl.lodz.p.it.pkck.XML.parsing.LocalDateAdapter;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Data
@@ -24,5 +27,6 @@ public class Person {
 
     @TableColumnCell("Birth date")
     @XmlElement(name = "BirthDate")
-    private Date birthDate;
+    @XmlJavaTypeAdapter(LocalDateAdapter.class)
+    private LocalDate birthDate;
 }

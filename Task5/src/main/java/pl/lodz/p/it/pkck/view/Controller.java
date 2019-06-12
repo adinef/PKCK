@@ -111,18 +111,28 @@ public class Controller {
 
     private void reloadContent(Map.Entry<Class, Function<FilmDatabase, List>> supplierPair,
                                TableView tabl) {
+        int selectedIndex = tabl.getSelectionModel().getSelectedIndex();
         tabl.getItems().clear();
         tabl.getItems().addAll(supplierPair.getValue().apply(currentDatabase));
+        tabl.getSelectionModel().focus(selectedIndex);
     }
 
     private void edit(Object obj) {
         if (obj != null) {
-            FXUtils.editMenuFor(obj);
+            if (obj instanceof Film) {
+                FilmEditUtils.editFilmMenu((Film)obj, this.currentDatabase);
+            } else {
+                FXUtils.editMenuFor(obj);
+            }
         }
     }
 
     private void newElem(Class clazz, List<?> elems) {
-        FXUtils.addMenuFor(clazz, elems);
+        if (Film.class.equals(clazz)) {
+            FilmEditUtils.addFilmMenu(this.currentDatabase);
+        } else {
+            FXUtils.addMenuFor(clazz, elems);
+        }
     }
 
     private void enableSaveButton() {

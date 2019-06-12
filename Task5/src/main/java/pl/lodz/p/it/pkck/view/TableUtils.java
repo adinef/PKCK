@@ -3,6 +3,7 @@ package pl.lodz.p.it.pkck.view;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import lombok.extern.slf4j.Slf4j;
 import pl.lodz.p.it.pkck.XML.TableColumnCell;
 import pl.lodz.p.it.pkck.XML.model.FilmDatabase;
 
@@ -57,8 +58,12 @@ public class TableUtils {
         String val = "";
         try {
             val =  field.get(cdf.getValue()).toString();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            if (e instanceof NullPointerException) {
+                System.out.println("Could not map field value, it's empty " + field.getName());
+            } else {
+                e.printStackTrace();
+            }
         }
         return new SimpleStringProperty(val);
     }
