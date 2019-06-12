@@ -18,8 +18,10 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("/sample.fxml"));
-        primaryStage.setTitle("Hello World");
-        primaryStage.setScene(new Scene(root, 900, 600));
+        primaryStage.setTitle("PKCK::: Adrian Fijałkowski (210171)");
+        primaryStage.setScene(new Scene(root, 1000, 800));
+        primaryStage.setMinHeight(750);
+        primaryStage.setMinWidth(700);
         primaryStage.show();
         mainStage = primaryStage;
     }

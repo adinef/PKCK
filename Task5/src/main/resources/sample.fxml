@@ -6,6 +6,8 @@
             <Menu text="Plik">
                 <MenuItem onAction="#loadFile" text="Wczytaj plik">
                 </MenuItem>
+                <MenuItem onAction="#loadValidator" text="Wybierz XSD">
+                </MenuItem>
                 <MenuItem fx:id="saveItem" onAction="#saveFile" text="Zapisz" disable="true">
                 </MenuItem>
             </Menu>

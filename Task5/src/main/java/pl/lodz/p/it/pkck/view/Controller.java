@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.input.KeyCode;
 import javafx.scene.layout.VBox;
+import javafx.stage.FileChooser;
+import pl.lodz.p.it.pkck.Main;
 import pl.lodz.p.it.pkck.XML.TableName;
 import pl.lodz.p.it.pkck.XML.model.*;
 import pl.lodz.p.it.pkck.XML.parsing.FilmDatabaseDataMapper;
@@ -19,10 +21,11 @@ import java.util.function.Function;
 public class Controller {
 
     public MenuItem saveItem;
-    FilmDatabaseDataMapper filmDatabaseDataMapper = new FilmDatabaseDataMapper();
-    FilmDatabase currentDatabase = null;
+    private FilmDatabaseDataMapper filmDatabaseDataMapper = new FilmDatabaseDataMapper();
+    private FilmDatabase currentDatabase = null;
     private File databaseFile;
-    RunActionEventHolder runActionEventHolder = new RunActionEventHolder();
+    private String schemaFileLocation = null;
+    private RunActionEventHolder runActionEventHolder = new RunActionEventHolder();
 
     /******************** CLASS -> FILM DB SUPPLIER ************************************/
     private Map<Class, Function<FilmDatabase, List>> suppliers = new HashMap<>();
@@ -42,6 +45,16 @@ public class Controller {
         this.suppliers.put(Category.class, FilmDatabase::getCategories);
         runActionEventHolder.addListener("loadedData", this::enableSaveButton);
         runActionEventHolder.addListener("beforeLoad", this::clearTableView);
+        runActionEventHolder.addListener("beforeLoad", this::clearTabPane);
+        runActionEventHolder.addListener("beforeLoad", this::clearSchema);
+    }
+
+    private void clearSchema() {
+        this.schemaFileLocation = null;
+    }
+
+    private void clearTabPane() {
+        this.tabPane.getTabs().clear();
     }
 
     @FXML
@@ -74,7 +87,10 @@ public class Controller {
             MenuItem deleteItem = new MenuItem("Delete item");
             contextMenu.getItems().addAll(editItem, newItem, deleteItem);
             tabl.setContextMenu(contextMenu);
-
+            tabl.setMinHeight(Main.getMainStage().getHeight() - 100);
+            Main.getMainStage().heightProperty().addListener(
+                    (o, oV, nV) -> tabl.setMinHeight(nV.intValue() - 100)
+            );
             editItem.setOnAction(
                     (e) -> {
                         this.edit(tabl.getSelectionModel().getSelectedItem());
@@ -188,6 +204,7 @@ public class Controller {
             this.filmDatabaseDataMapper.saveData(
                     this.currentDatabase,
                     this.databaseFile,
+                    this.schemaFileLocation,
                     FilmDatabase.class,
                     Actor.class,
                     Director.class,
@@ -199,5 +216,16 @@ public class Controller {
             FXUtils.noDataPopup("Error", "There has been error during saving, " + e.getMessage());
             e.printStackTrace();
         }
+    }
+
+    public void loadValidator(ActionEvent actionEvent) {
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setInitialDirectory(new File("."));
+        fileChooser.setTitle("Select XSD");
+        fileChooser.setSelectedExtensionFilter(
+                new FileChooser.ExtensionFilter("XSD file", "xsd")
+        );
+        File file = fileChooser.showOpenDialog(Main.getMainStage());
+        this.schemaFileLocation = (file != null ? file.getAbsolutePath() : null);
     }
 }

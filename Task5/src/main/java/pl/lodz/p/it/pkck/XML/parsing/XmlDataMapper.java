@@ -30,9 +30,12 @@ public abstract class XmlDataMapper<T> {
         return elem;
     }
 
-    public void saveData(T elem, File file, Class... classes) throws Exception {
+    public void saveData(T elem, File file, String schemaFileLocation, Class... classes) throws Exception {
         JAXBContext jaxbContext = JAXBContext.newInstance(classes);
         Marshaller marshaller = jaxbContext.createMarshaller();
+        if (schemaFileLocation != null) {
+            marshaller.setProperty(Marshaller.JAXB_SCHEMA_LOCATION, schemaFileLocation);
+        }
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
         FileOutputStream fileOutputStream = new FileOutputStream(file);
         marshaller.marshal(elem, fileOutputStream);

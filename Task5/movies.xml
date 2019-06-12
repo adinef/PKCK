@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<FilmDatabase xmlns="http://it.p.lodz.pl/pkck">
+<FilmDatabase xmlns="http://it.p.lodz.pl/pkck" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="C:\Users\Script\Desktop\PROJECTS\PKCK\Task5\movies.xsd">
     <Head>
         <Author>Adrian Fijałkowski</Author>
         <EMail>210171@edu.p.lodz.pl</EMail>
         <Name>Baza filmów</Name>
     </Head>
     <Categories>
-        <Category id="CAT01">Horror2</Category>
+        <Category id="CAT01">Horror</Category>
         <Category id="CAT02">Dramat</Category>
         <Category id="CAT03">Wojenny</Category>
         <Category id="CAT04">Akcja</Category>
@@ -59,7 +59,7 @@
         </Lead>
         <Lead id="L09">
             <Name>Daniel</Name>
-            <LastName>Day-Lewis</LastName>
+            <LastName></LastName>
             <BirthDate>1957-04-29</BirthDate>
         </Lead>
         <Lead id="L10">
@@ -386,15 +386,6 @@
             </Categories>
             <Description>Bezimienny kierowca postanawia pomóc mężowi swojej sąsiadki w anulowaniu długu u groźnych bandytów.</Description>
             <ReleaseYear>2011</ReleaseYear>
-        </Film>
-        <Film id="F05" leadId="L05" directorId="D05">
-            <Name>Filadelfia</Name>
-            <AvgScore>10.0</AvgScore>
-            <Categories>
-                <Category>CAT02</Category>
-            </Categories>
-            <Description>Chorujący na AIDS prawnik zostaje zwolniony z pracy. Walcząc o godność, podaje do sądu byłych pracodawców.</Description>
-            <ReleaseYear>1993</ReleaseYear>
         </Film>
     </Films>
 </FilmDatabase>

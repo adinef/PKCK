@@ -18,14 +18,13 @@ import java.util.function.Supplier;
 public class FilmEditUtils {
 
     private final static String DIGIT_PATTERN = "\\d*";
-    private final static String SCORE_PATTERN = "^(?:[1-9]|0[1-9]|10)$";
 
     public static void addFilmMenu(FilmDatabase filmDatabase) {
-        modifyFilmMenu(filmDatabase::getFilms, filmDatabase, "Edit film ");
+        modifyFilmMenu(filmDatabase::getFilms, filmDatabase, "New film ");
     }
 
     public static void editFilmMenu(Film film, FilmDatabase filmDatabase) {
-        modifyFilmMenu(() -> film, filmDatabase, "New film ");
+        modifyFilmMenu(() -> film, filmDatabase, "Edit film ");
     }
 
     private static <T> void modifyFilmMenu(Supplier<T> supplier, FilmDatabase filmDatabase, String caption) {
@@ -55,7 +54,16 @@ public class FilmEditUtils {
         );
         avgScoreTextField.textProperty().addListener(
                 (o, oV, nV) -> {
-                    if (!nV.matches(SCORE_PATTERN)) {
+                    if (nV == null || nV.isEmpty()) {
+                        return;
+                    }
+                    Double val;
+                    try {
+                        val = Double.parseDouble(nV);
+                    } catch (Exception e) {
+                        val = -1d;
+                    }
+                    if (val > 10 || val < 0) {
                         avgScoreTextField.setText(oV);
                     }
                 }
@@ -68,6 +76,9 @@ public class FilmEditUtils {
         );
         releaseYearTextField.textProperty().addListener(
                 (o, oV, nV) -> {
+                    if (nV == null || nV.isEmpty()) {
+                        return;
+                    }
                     if (!nV.matches(DIGIT_PATTERN)) {
                         releaseYearTextField.setText(oV);
                     }
@@ -142,7 +153,6 @@ public class FilmEditUtils {
                     film.setReleaseYear(Integer.parseInt(releaseYearTextField.getText()));
                     film.setDescription(descriptionTextField.getText());
                     film.setCategoryList(categoryChips.getChips());
-                    filmDatabase.getFilms().add(film);
                     if (finalWholeData != null) {
                         finalWholeData.add(film);
                     }
