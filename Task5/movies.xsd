@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns="http://it.p.lodz.pl/pkck"
+			xmlns:filmsSpace="http://it.p.lodz.pl/pkck/210171"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://it.p.lodz.pl/pkck"
+			elementFormDefault="qualified">
+  <xs:element name="FilmDatabase">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Head" />
+        <xs:element ref="Categories" />
+        <xs:element ref="Actors" />
+        <xs:element ref="Directors" />
+        <xs:element ref="Films" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Author">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:pattern value="([a-żA-Ż ])*"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="EMail">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:whiteSpace value="collapse"/>
+        <xs:pattern value="([a-z0-9])*(@)([a-z .])*(.)(a-z)*" />
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="Name">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:pattern value="([a-żA-Ż .':])*"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="Head">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Author" />
+        <xs:element ref="EMail" />
+        <xs:element ref="Name" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LastName">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:pattern value="([a-żA-Ż -.'])*"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="Categories">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Category" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Category">
+    <xs:complexType>
+      <xs:simpleContent>
+        <xs:extension base="xs:string">
+          <xs:attribute name="refId" type="xs:IDREF" use="optional" />
+          <xs:attribute name="id" type="xs:ID" use="optional" />
+        </xs:extension>
+      </xs:simpleContent>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Films">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Film" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Actors">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Lead" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Directors">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="Director" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Lead">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Name" />
+        <xs:element ref="LastName" />
+        <xs:element ref="BirthDate" />
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:ID" />
+      <xs:attribute name="refId" type="xs:IDREF" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="BirthDate" type="xs:date" />
+  <xs:element name="Director">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Name" />
+        <xs:element ref="LastName" />
+        <xs:element ref="BirthDate" />
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:ID" />
+      <xs:attribute name="refId" type="xs:IDREF" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="Film">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element ref="Name" />
+        <xs:element ref="AvgScore" />
+        <xs:element ref="Categories" />
+        <xs:element ref="Description" />
+        <xs:element ref="ReleaseYear" />
+        <xs:element ref="Lead" />
+        <xs:element ref="Director" />
+      </xs:sequence>
+      <xs:attribute name="id" type="xs:ID" use="required" />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AvgScore">
+    <xs:simpleType>
+      <xs:restriction base="xs:double">
+        <xs:minInclusive value="0"/>
+        <xs:maxInclusive value="10"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="Description" type="xs:string" />
+  <xs:element name="ReleaseYear" type="xs:integer" />
+</xs:schema>

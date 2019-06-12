@@ -27,30 +27,12 @@ public class FilmDatabase {
     @ElementList(name = "Categories", entry = "Category")
     private List<Category> categories;
 
+    @ElementList(name = "Actors", entry = "Lead")
+    private List<Actor> actors;
+
+    @ElementList(name = "Directors", entry = "Director")
+    private List<Director> directors;
+
     @ElementList(name = "Films", entry = "Film")
     private List<Film> films;
-
-    public String getAuthor() {
-        return author;
-    }
-
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
 }

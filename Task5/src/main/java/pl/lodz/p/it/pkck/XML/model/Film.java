@@ -4,53 +4,45 @@ import lombok.Data;
 import org.simpleframework.xml.Attribute;
 import org.simpleframework.xml.Element;
 import org.simpleframework.xml.ElementList;
-import pl.lodz.p.it.pkck.annotations.Column;
+import pl.lodz.p.it.pkck.XML.TableColumnCell;
+import pl.lodz.p.it.pkck.XML.TableName;
 
 import java.util.List;
 
 @Data
+@TableName("Films")
 public class Film {
 
-
-    @Column("id")
     @Attribute(name = "filmId", required = false)
     private String filmId;
 
-
-    @Column("Name")
+    @TableColumnCell("Name")
     @Element(name = "Name")
     private String name;
 
-
-    @Column("Average score")
+    @TableColumnCell("Avg score")
     @Element(name = "AvgScore")
     private Double avgScore;
 
-
-    @Column("Categories")
+    @TableColumnCell("Categories")
     @ElementList(name = "Categories", entry = "Category")
     private List<Category> categoryList;
 
-
-    @Column("Description")
+    @TableColumnCell("Description")
     @Element(name = "Description")
     private String description;
 
-
-    @Column("Release year")
+    @TableColumnCell("Release year")
     @Element(name = "ReleaseYear")
     private Integer releaseYear;
 
-
-    @Column("Lead")
+    @TableColumnCell("Lead")
     @Element(name = "Lead")
     private Actor lead;
 
-
-    @Column("Director")
+    @TableColumnCell("Director")
     @Element(name = "Director")
     private Director director;
-
 
     @Override
     public String toString() {
