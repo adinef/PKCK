@@ -194,8 +194,9 @@ public class Controller {
                     Film.class,
                     Category.class
             );
+            FXUtils.noDataPopup("Success", "Saved with success!");
         } catch (Exception e) {
-            FXUtils.noDataPopup("Błąd", "Wystąpił błąd przy zapisie. " + e.getMessage());
+            FXUtils.noDataPopup("Error", "There has been error during saving, " + e.getMessage());
             e.printStackTrace();
         }
     }

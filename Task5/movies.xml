@@ -236,11 +236,11 @@
         </Film>
         <Film id="F05" leadId="L05" directorId="D05">
             <Name>Filadelfia</Name>
-            <AvgScore>8.2</AvgScore>
+            <AvgScore>10.0</AvgScore>
             <Categories>
                 <Category>CAT02</Category>
             </Categories>
-            <Description>Chorujący na AIDS prawnik zostaje zwolniony z pracy. Walcząc o godność, podaje do sądu byłych                pracodawców.</Description>
+            <Description>Chorujący na AIDS prawnik zostaje zwolniony z pracy. Walcząc o godność, podaje do sądu byłych pracodawców.</Description>
             <ReleaseYear>1993</ReleaseYear>
         </Film>
         <Film id="F06" leadId="L06" directorId="D06">
@@ -386,6 +386,15 @@
             </Categories>
             <Description>Bezimienny kierowca postanawia pomóc mężowi swojej sąsiadki w anulowaniu długu u groźnych bandytów.</Description>
             <ReleaseYear>2011</ReleaseYear>
+        </Film>
+        <Film id="F05" leadId="L05" directorId="D05">
+            <Name>Filadelfia</Name>
+            <AvgScore>10.0</AvgScore>
+            <Categories>
+                <Category>CAT02</Category>
+            </Categories>
+            <Description>Chorujący na AIDS prawnik zostaje zwolniony z pracy. Walcząc o godność, podaje do sądu byłych pracodawców.</Description>
+            <ReleaseYear>1993</ReleaseYear>
         </Film>
     </Films>
 </FilmDatabase>

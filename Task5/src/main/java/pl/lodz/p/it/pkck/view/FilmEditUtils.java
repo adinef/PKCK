@@ -18,7 +18,7 @@ import java.util.function.Supplier;
 public class FilmEditUtils {
 
     private final static String DIGIT_PATTERN = "\\d*";
-    private final static String SCORE_PATTERN = "[0-9] || (10)";
+    private final static String SCORE_PATTERN = "^(?:[1-9]|0[1-9]|10)$";
 
     public static void addFilmMenu(FilmDatabase filmDatabase) {
         modifyFilmMenu(filmDatabase::getFilms, filmDatabase, "Edit film ");
@@ -95,7 +95,7 @@ public class FilmEditUtils {
         JFXComboBox directorCheckbox = new JFXComboBox();
         directorCheckbox.getItems().addAll(filmDatabase.getDirectors());
         if (film.getDirector() != null) {
-            actorCheckbox.getSelectionModel().select(film.getDirector());
+            directorCheckbox.getSelectionModel().select(film.getDirector());
         }
 
         Label categoriesLabel = new Label("Categories");
